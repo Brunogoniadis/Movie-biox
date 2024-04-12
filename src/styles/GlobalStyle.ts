@@ -44,7 +44,7 @@ export default createGlobalStyle`
   }
 
   body, input, button, textarea {
-    font-family: 'Montserrat';
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
   }
 
