@@ -13,6 +13,7 @@ export const Home = () => {
 
 
     const [movies, setMovies] = useState<MovieData[]>([]);
+    const [movieSuggested, setMovieSuggested] = useState<number>(1);
 
 
     useEffect(() => {
@@ -23,8 +24,18 @@ export const Home = () => {
         fetchAndDisplayMovies();
     }, []);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const randomValue = Math.floor(Math.random() * 11);
+            setMovieSuggested(randomValue);
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+
     const backgroundImage = movies.length > 0 ? `
-        url(https://image.tmdb.org/t/p/original${movies[0].backdrop_path})` : "";
+        url(https://image.tmdb.org/t/p/original${movies[movieSuggested].backdrop_path})` : "";
 
     useEffect(() => {
         console.log('movies', movies)
@@ -38,11 +49,12 @@ export const Home = () => {
 
                 <div className="mainMovieWrapper">
                     <h2>
-                        {movies[0]?.original_title}
+
+                        <p>{movies[movieSuggested]?.original_title}</p>
+
                     </h2>
                     <p>
-                        {movies[0]?.vote_average}
-
+                        <p>{movies[movieSuggested]?.vote_average}</p>
 
                     </p>
                     <div className="ButtonsWrapper">
