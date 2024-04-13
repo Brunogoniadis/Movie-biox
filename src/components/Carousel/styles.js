@@ -1,37 +1,8 @@
 import styled from "styled-components";
 import Slider from 'react-slick';
 
-export const CarouselWrapper = styled.div`
-    width: 100%;
-    margin-top: 35px;
 
 
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 500;
-
-    margin: 0;
-
-    h2{
-      margin-top: 35px;
-      margin-bottom: 25px;
-
-      margin-left: 5%;
-
-      display: flex;
-      align-items: center;
-      justify-content: start;
-      width: 100%;
-      font-size: 25px;
-      font-weight: bold;
-    }
-
-
-`
 
 export const CustomSlider = styled(Slider)`
   *{

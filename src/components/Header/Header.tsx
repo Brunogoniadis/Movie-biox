@@ -13,7 +13,6 @@ const Header = () => {
 
     const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('search', searchTerm);
 
         if (!searchTerm) return;
 
