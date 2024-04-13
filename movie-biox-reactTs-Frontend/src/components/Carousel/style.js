@@ -2,10 +2,10 @@ import styled from "styled-components";
 import Slider from 'react-slick';
 
 export const CarouselWrapper = styled.div`
-    width: 99%;
-    padding: 25px;
-    height: 390px;
+    width: 100%;
     margin-top: 35px;
+
+
 
     display: flex;
     flex-direction: column;
@@ -14,9 +14,14 @@ export const CarouselWrapper = styled.div`
     overflow: hidden;
     z-index: 500;
 
+    margin: 0;
 
     h2{
       margin-top: 35px;
+      margin-bottom: 25px;
+
+      margin-left: 5%;
+
       display: flex;
       align-items: center;
       justify-content: start;
@@ -33,35 +38,51 @@ export const CustomSlider = styled(Slider)`
     text-decoration: none;
   }
 
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 95%;
+  width: 100%;
+
+
+      &:hover{
+        .slick-prev,
+        .slick-next {
+    opacity: 1;
+
+
+  }
+
+  }
 
   .slick-prev,
   .slick-next {
     font-size: 0px;
-    height:100px;
+    height:130px;
     background-color: transparent;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 50px;
+    width: 35px;
     border-radius: 5px;
-    border: 1px solid #C5C5C5;
+    border: none;
     transition: all ease 500ms;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    &:hover{
+  &::before {
+    font-size: 70px; 
+          transition: font-size 200ms ease; 
+
+  }
+    }
   }
 
-  .slick-prev:hover,
-  .slick-next:hover {
-    background-color: #d9d9d9;
-
-  }
 
   .slick-prev {
-        background-image: url('https://www.gstatic.com/images/icons/material/system/1x/arrow_back_ios_black_24dp.png'); /* URL do ícone de seta do Google */
 
 
     display: flex;
@@ -71,26 +92,40 @@ export const CustomSlider = styled(Slider)`
   }
 
   .slick-next {
-        background-image: url('https://www.gstatic.com/images/icons/material/system/1x/arrow_forward_ios_black_24dp.png'); /* URL do ícone de seta do Google */
-  display: flex;
+    display: flex;
     position: absolute;
     right: 0px;
     z-index: 501;
 
-    
-
   }
 
-  .slick-next:before,  .slick-prev:before {
-      content: '';
-    
-  }
 
+    .slick-next::before{
+    content: "keyboard_arrow_right";
+    font-family: 'Material Icons'; 
+    font-size: 50px; 
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+        .slick-prev::before{
+    content: "keyboard_arrow_left";
+    font-family: 'Material Icons'; 
+    font-size: 50px; 
+    color: white; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+
+
+  
 
 
   .slick-list{
-    width: 100vw;
-    max-width: 1080px;
     height: 320px;
     overflow: hidden;
     display: grid;

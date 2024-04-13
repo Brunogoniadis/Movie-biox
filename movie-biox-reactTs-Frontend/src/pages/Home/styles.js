@@ -1,16 +1,17 @@
 
 import styled from 'styled-components';
 
-export const HomeWrapper = styled.header`
+export const HomeWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 110%;
+  background-size: cover;
   background-position: center;
   position: relative;
 
+  transition: ease 1s all;
 
   .maincontent{
     display: flex;

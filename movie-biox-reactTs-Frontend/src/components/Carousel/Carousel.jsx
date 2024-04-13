@@ -5,7 +5,7 @@ const Carousel = ({ movies }) => {
   const settings = {
     dots: false,
     arrows: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -18,7 +18,7 @@ const Carousel = ({ movies }) => {
 
   return (
     <CarouselWrapper>
-      <h2>Movies</h2>
+      <h2>Sugeridos</h2>
       <CustomSlider {...settings}>
         {movies.map((movie) => (
           <Item key={movie.id}>
