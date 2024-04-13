@@ -1,16 +1,17 @@
 
 import styled from 'styled-components';
 
-export const HomeWrapper = styled.div`
+export const MovieWrapper = styled.div`
   width: 100vw;
+  height: 130vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  background-size: 100% ;
 
+  background-position: center top; 
+  background-repeat: no-repeat;
+  position: relative;
   transition: ease 1s all;
 
   .maincontent{
@@ -37,17 +38,14 @@ export const HomeWrapper = styled.div`
     }
 
     .mainMovieWrapper{
-      width: 40%;
-      height: 40%;
       align-self: flex-start;
-      margin-top: 10%;
+      top: 10%;
       left: 10%;
       z-index: 500;
       display: flex;
       flex-direction: column;
       align-items: start;
       gap: 5%;
-
 
       .ButtonsWrapper{
         display: flex;
@@ -74,7 +72,7 @@ export const HomeWrapper = styled.div`
 
 
   .leftblur {
-    width: 85%;
+    width: 45%;
     height: 100%;
     position: absolute;
     bottom: 0;
@@ -84,10 +82,10 @@ export const HomeWrapper = styled.div`
 
   .overblur{
     width: 100%;
-    height: 150px;
+    height: 650px;
     position: absolute;
     bottom: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
 
   }
 `;
