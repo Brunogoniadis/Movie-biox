@@ -42,7 +42,7 @@ const Header = () => {
 
             <nav>
                 <Link to="/">Movies</Link>
-                <Link to="/:Tv">TV Shows</Link>
+                <Link to="/tv">TV Shows</Link>
                 <Link to="/movies">Movies</Link>
             </nav>
 

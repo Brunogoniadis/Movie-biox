@@ -3,32 +3,32 @@ import { useEffect, useState } from "react";
 import { HomeWrapper } from "./styles";
 import { getCategories } from "../../services/getMovieCategories";
 
-import { MovieHome } from "../../components/MovieHome/MovieHome";
-import { useParams } from "react-router-dom";
-interface IuseParams {
-    type: string | undefined;
-    [key: string]: string | undefined;
-}
+import { ShowHome } from '../../components/MovieHome/ShowHome'
+
+
 
 export const Home = () => {
 
 
-    const { type } = useParams<IuseParams>();
 
-    console.log('id', type)
-
-    const [movieCategory, setMovieCategory] = useState<unknown[]>([]);
+    const [category, setCategory] = useState<unknown[]>([]);
 
     useEffect(() => {
-        const fetchCategoryMovies = async () => {
+        const fetchCategory = async () => {
+
             const categories = await getCategories();
-            setMovieCategory(categories);
+            setCategory(categories);
+
         };
-        fetchCategoryMovies();
+        fetchCategory();
+
+
+
+
     }, []);
 
 
-    console.log('movieCategory', movieCategory)
+    console.log('movieCategory', category)
 
 
 
@@ -36,8 +36,8 @@ export const Home = () => {
         <>
 
             <HomeWrapper >
-                {movieCategory.map((category) => (
-                    <MovieHome id={category.id} />
+                {category.map((category) => (
+                    <ShowHome id={category.id} />
                 ))}
 
             </HomeWrapper>

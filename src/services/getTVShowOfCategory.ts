@@ -16,7 +16,7 @@ export interface TVShowData {
   vote_count: number;
 }
 
-export const getTVShowsByGenre = async (
+export const getTVShowsByCategory = async (
   genreId: number
 ): Promise<TVShowData[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;

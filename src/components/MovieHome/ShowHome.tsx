@@ -1,22 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { MovieData } from "../../services/getMovieByPopularity";
-import { MovieWrapper } from "./styles";
+import { ShowHomeWrapper } from "./styles";
 import PlayButton from "../PlayButton/PlayButton";
 import InfoButton from "../InfoButton/InfoButton";
 import Carousel from "../Carousel/Carousel";
 import { getMoviesCategory } from "../../services/getMoviesOfCategory";
 
-
-
-
-interface MovieHomeProps {
+interface IShowHomeProps {
     id: number;
 }
 
-
-
-
-export const MovieHome = (props: MovieHomeProps) => {
+export const ShowHome = (props: IShowHomeProps) => {
 
     const { id } = props
 
@@ -74,7 +68,7 @@ export const MovieHome = (props: MovieHomeProps) => {
     }, []);
 
     return (
-        <MovieWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[movieSuggested]?.currentSrc})` }}>
+        <ShowHomeWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[movieSuggested]?.currentSrc})` }}>
             <div className="maincontent">
                 <div className="mainMovieWrapper" >
                     <h2>{movies[movieSuggested]?.original_title}</h2>
@@ -92,6 +86,6 @@ export const MovieHome = (props: MovieHomeProps) => {
                 <div className="leftblur" />
                 <div className="overblur" />
             </div>
-        </MovieWrapper>
+        </ShowHomeWrapper>
     );
 };

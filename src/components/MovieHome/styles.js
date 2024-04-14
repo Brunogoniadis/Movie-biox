@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-export const MovieWrapper = styled.div`
+export const ShowHomeWrapper = styled.div`
   width: 100vw;
   height: 130vh;
   display: flex;
