@@ -62,6 +62,7 @@ export const Movie = () => {
     <div className="caroselWrapper">
       <Carousel
         typeOfStyle={'min'}
+        typeOfMedia='movie'
         data={moviesrelacioned} />
 
     </div>

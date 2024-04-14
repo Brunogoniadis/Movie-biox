@@ -80,7 +80,9 @@ export const ShowHome = (props: IShowHomeProps) => {
                 </div>
                 <div className="caroselWrapper" style={{ opacity: carouselOpacity, 
                     transition: "all 1.5s ease" }}>
-                    <Carousel data={movies} />
+                    <Carousel data={movies}
+                    typeOfMedia="movie"
+                    />
                 </div>
                 <div className="bottomblur" />
                 <div className="leftblur" />
