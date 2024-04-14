@@ -1,0 +1,42 @@
+# config files
+.env
+
+# Dependencies
+/node_modules
+
+# comp files
+*.log
+*.pem
+*.pid
+*.lock
+*.sock
+*.swp
+*.tgz
+*.zip
+*.rar
+
+# cache
+.npm
+.yarn
+*.cache
+
+# build files
+/build
+/dist
+
+# ide files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# test files
+/coverage
+
+# os files
+.DS_Store
+Thumbs.db
+
+# others
+*.bak
+*.tmp
