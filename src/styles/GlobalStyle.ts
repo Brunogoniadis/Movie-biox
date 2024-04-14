@@ -35,7 +35,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(250deg, #020D00 -12%, #122A0D 114%);
+    background-color:  #080D07 ;
     color: var(--color-text);
     -webkit-font-smoothing: antialiased;
 

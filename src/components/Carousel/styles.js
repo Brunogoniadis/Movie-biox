@@ -42,7 +42,6 @@ export const CustomSlider = styled(Slider)`
     transition: all ease 500ms;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
     &:hover{
   &::before {
     font-size: 70px; 
@@ -116,7 +115,14 @@ export const CustomSlider = styled(Slider)`
         align-items: center;
         justify-content: center;
         text-decoration: none;
+        
+          margin-top: 2px;
+          transition: ease-in 0.5ms all;
+        :hover{
+          margin-top: -2px;
 
+}
+        
     }
   }
 
@@ -153,7 +159,6 @@ export const Item = styled.div`
   height: 10%;
   font-size: 10px;
 }
-
 .starContainer{
   width: 100%;
   height: 55%;
@@ -169,7 +174,7 @@ export const Item = styled.div`
     width: ${props => props.width};
     height: ${props => props.height};
       border-radius: ${props => props.borderRadius};
-filter: brightness(0.5);
+filter: brightness(0.5) ;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: contain;
@@ -183,9 +188,8 @@ filter: brightness(0.5);
   transition: all 0.3s ease; 
 
 
-
-
+}
   
-  }
+
 
 `;

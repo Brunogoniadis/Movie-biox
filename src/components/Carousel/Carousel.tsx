@@ -36,10 +36,11 @@ const Carousel = (props: CarouselProps) => {
   let width = 'auto';
   let borderRadius = '5%';
   let heightImage = '310px';
-  let caroselItems = 5
-  let backgroundCard: string = 'poster_path'
-  let arrowContainerHeight = '130px'
+  let caroselItems = 5;
+  let backgroundCard: string = 'poster_path';
+  let arrowContainerHeight = '130px';
 
+  
   if (typeOfStyle === "min") {
     height = '140px';
     width = '250px';
@@ -56,10 +57,12 @@ const Carousel = (props: CarouselProps) => {
     dots: false,
     arrows: true,
     infinite: false,
-    speed: 500,
+    speed: 320,
     slidesToShow: caroselItems,
     slidesToScroll: 1,
     autoplay: false,
+
+    cssEase: 'ease-in-out',
 
     responsive: [
       {
@@ -96,6 +99,7 @@ const Carousel = (props: CarouselProps) => {
               className="image"
               src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Data]}`}
               alt={movie.title}
+             
             />
             <div className="textContainer">
               <p className="pTitle">{movie.title || movie.name}</p>
