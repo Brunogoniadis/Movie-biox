@@ -37,7 +37,7 @@ export const Movie = () => {
       setMoviesrelacioned(movieRelacionedMovies);
     };
     fetchRelacionedMovies();
-  }, []);
+  }, [id]);
 
   console.log('moviesrelacioned', moviesrelacioned)
 

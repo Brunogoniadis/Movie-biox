@@ -1,5 +1,6 @@
 import { CustomSlider, Item } from './styles';
 import { NoteCalc } from '../NoteCalc/NoteCalc';
+import { Link } from 'react-router-dom';
 
 interface Movie {
   adult: boolean;
@@ -67,36 +68,28 @@ const Carousel = (props: CarouselProps) => {
       arrowContainerHeight={arrowContainerHeight}
     >
       {movies.map((movie) => (
-        <Item key={movie.id}
-          height={height}
-          width={width}
-          heightImage={heightImage}
-          borderRadius={borderRadius}
-        >
-          <img
-
-            referrerPolicy="no-referrer"
-            className="image"
-            src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Movie]}`}
-            alt={movie.title}
-          />
-          <div className="textContainer">
-            <p
-              className="pTitle"
-            >{movie.title}</p>
-            <p
-              className="pSub"
-            >id:{movie.id}</p>
-
-            <div className="starContainer">
-
-              <NoteCalc
-                typeOfStyle='min'
-                noteAverage={movie?.vote_average} />
-
+        <Link to={`/movie/${movie.id}`} key={movie.id}>
+          <Item
+            height={height}
+            width={width}
+            heightImage={heightImage}
+            borderRadius={borderRadius}
+          >
+            <img
+              referrerPolicy="no-referrer"
+              className="image"
+              src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Movie]}`}
+              alt={movie.title}
+            />
+            <div className="textContainer">
+              <p className="pTitle">{movie.title}</p>
+              <p className="pSub">id:{movie.id}</p>
+              <div className="starContainer">
+                <NoteCalc typeOfStyle='min' noteAverage={movie?.vote_average} />
+              </div>
             </div>
-          </div>
-        </Item>
+          </Item>
+        </Link>
       ))}
     </CustomSlider>
   );
