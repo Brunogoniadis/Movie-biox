@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HeaderWrapper } from './styles.js';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [searchSize, setSearchSize] = useState('0px');
@@ -41,10 +41,9 @@ const Header = () => {
             <h2>Logo</h2>
 
             <nav>
-                <a href="#">Home</a>
-                <a href="#">TV Shows</a>
-                <a href="#">Movies</a>
-                <a href="#">My List</a>
+                <Link to="/">Movies</Link>
+                <Link to="/:Tv">TV Shows</Link>
+                <Link to="/movies">Movies</Link>
             </nav>
 
             <div className="formContainer">

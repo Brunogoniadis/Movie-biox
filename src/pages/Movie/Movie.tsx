@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { MovieData, getMovieById } from '../../services/getMovieById';
 import { MovieScreen } from './styles';
 import { NoteCalc } from '../../components/NoteCalc/NoteCalc';
-import { getRelacionedMovies, MovieData as MovieDatas } from '../../services/getRelacionedMovies';
+import { getMoviesRelacioned } from '../../services/getMoviesRelacioned';
 import Carousel from '../../components/Carousel/Carousel';
 
 
@@ -33,7 +33,7 @@ export const Movie = () => {
     fetchCategoryMovies();
 
     const fetchRelacionedMovies = async () => {
-      const movieRelacionedMovies = await getRelacionedMovies(id);
+      const movieRelacionedMovies = await getMoviesRelacioned(id);
       setMoviesrelacioned(movieRelacionedMovies);
     };
     fetchRelacionedMovies();

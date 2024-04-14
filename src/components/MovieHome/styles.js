@@ -25,7 +25,7 @@ export const MovieWrapper = styled.div`
 
     .caroselWrapper{
       width: 100%;
-
+      overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,7 +34,6 @@ export const MovieWrapper = styled.div`
     z-index: 500;
 
     margin: 0;
-    margin-bottom: 10%;
 
     }
         

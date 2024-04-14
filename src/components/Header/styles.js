@@ -9,7 +9,7 @@ export const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  height: 60px; /* Ajustando a altura para 60px, semelhante à Netflix */
+  height: 80px; 
   z-index: 1001;
   display: flex;
   justify-content: space-between;
@@ -36,6 +36,8 @@ export const HeaderWrapper = styled.header`
   input {
     border: none;
     color: #fff;
+
+    height: 4%;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 25px;
@@ -67,13 +69,15 @@ export const HeaderWrapper = styled.header`
     display: flex;
     align-items: center;
 
-    a {
+    gap: 15px;
+
+    link {
       color: #fff;
       text-decoration: none;
       margin-left: 3rem;
       font-weight: bold;
       transition: color 0.3s ease;
-      font-size: 12px;
+      font-size: 16px;
       &:hover {
         color: #f65261;
       }

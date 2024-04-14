@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { getMoviesByPopularity, MovieData } from "../../services/getMovieByPopularity";
+import { useEffect, useState } from "react";
+
 import { HomeWrapper } from "./styles";
-import PlayButton from "../../components/PlayButton/PlayButton";
-import InfoButton from "../../components/InfoButton/InfoButton";
-import Carousel from "../../components/Carousel/Carousel";
-import { getCategories } from "../../services/getCategories";
-import { MovieWrapper } from "../../components/MovieHome/styles";
+import { getCategories } from "../../services/getMovieCategories";
+
 import { MovieHome } from "../../components/MovieHome/MovieHome";
+import { useParams } from "react-router-dom";
+interface IuseParams {
+    type: string | undefined;
+    [key: string]: string | undefined;
+}
 
 export const Home = () => {
+
+
+    const { type } = useParams<IuseParams>();
+
+    console.log('id', type)
 
     const [movieCategory, setMovieCategory] = useState<unknown[]>([]);
 

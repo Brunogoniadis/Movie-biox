@@ -1,28 +1,25 @@
 import axios from "axios";
 
-export interface MovieData {
-  adult: boolean;
+export interface TVShowData {
   backdrop_path: string | null;
+  first_air_date: string;
   genre_ids: number[];
   id: number;
+  name: string;
+  origin_country: string[];
   original_language: string;
-  original_title: string;
+  original_name: string;
   overview: string;
   popularity: number;
   poster_path: string | null;
-  release_date: string;
-  title: string;
-  video: boolean;
   vote_average: number;
   vote_count: number;
 }
 
-export const getRelacionedMovies = async (
-  movieId: string | undefined
-): Promise<MovieData[]> => {
+export const getTVShowsByPopularity = async (): Promise<TVShowData[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const apiUrl: string = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}`;
+  const apiUrl = `https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=${apiKey}`;
 
   try {
     const response = await axios.get(apiUrl);
