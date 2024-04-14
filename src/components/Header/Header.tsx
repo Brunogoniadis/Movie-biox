@@ -43,7 +43,6 @@ const Header = () => {
             <nav>
                 <Link to="/">Movies</Link>
                 <Link to="/tv">TV Shows</Link>
-                <Link to="/movies">Movies</Link>
             </nav>
 
             <div className="formContainer">

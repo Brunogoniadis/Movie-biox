@@ -1,6 +1,6 @@
 import axios from "axios";
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
 }

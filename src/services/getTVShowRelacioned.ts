@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export interface TVShowData {
+export interface TVShowDataRelacioned {
   backdrop_path: string | null;
   first_air_date: string;
   genre_ids: number[];
@@ -18,7 +18,7 @@ export interface TVShowData {
 
 export const getTVShowRelacioned = async (
   tvShowId: string | undefined
-): Promise<TVShowData[]> => {
+): Promise<TVShowDataRelacioned[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const apiUrl: string = `https://api.themoviedb.org/3/tv/${tvShowId}/recommendations?api_key=${apiKey}`;

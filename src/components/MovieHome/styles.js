@@ -67,9 +67,9 @@ export const ShowHomeWrapper = styled.div`
   
   .bottomblur {
     width: 100%;
-    height: 150px;
+    height: 160px;
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 0; 
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   }

@@ -3,20 +3,20 @@ import { NoteCalc } from '../NoteCalc/NoteCalc';
 import { Link } from 'react-router-dom';
 
 interface Data {
-  adult: boolean;
+  adult?: boolean;
   backdrop_path: string | null;
   genre_ids: number[];
-  name: string;
+  name?: string;
   id: number;
   original_language: string;
-  original_title: string;
+  original_title?: string;
   overview: string;
   popularity: number;
-  poster_path: string;
-  release_date: string;
+  poster_path: string | null;
+  release_date?: string;
   runtime?: string;
-  title: string;
-  video: boolean;
+  title?: string;
+  video?: boolean;
   vote_average: number;
   vote_count: number;
 }
@@ -24,10 +24,11 @@ interface Data {
 interface CarouselProps {
   data: Data[];
   typeOfStyle?: string
+  typeOfMedia?: string
 }
 
 const Carousel = (props: CarouselProps) => {
-  const { data: movies, typeOfStyle } = props;
+  const { data: movies, typeOfStyle, typeOfMedia } = props;
 
   console.log('data', movies)
 
@@ -49,6 +50,7 @@ const Carousel = (props: CarouselProps) => {
 
     backgroundCard = 'backdrop_path'
   }
+
 
   const settings = {
     dots: false,
@@ -80,7 +82,9 @@ const Carousel = (props: CarouselProps) => {
       arrowContainerHeight={arrowContainerHeight}
     >
       {movies.map((movie) => (
-        <Link to={`/movie/${movie.id}`} key={movie.id}>
+        <Link to={typeOfMedia === "movie" ? `/movie/${movie.id}` : `/tvShow/${movie.id}`}
+        >
+
           <Item
             height={height}
             width={width}

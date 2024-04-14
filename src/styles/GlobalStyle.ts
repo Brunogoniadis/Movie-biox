@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   :root {
@@ -35,7 +35,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(250deg, var(--color-secondary) -12%, var(--color-tertiary) 114%);
+    background: linear-gradient(250deg, #020D00 -12%, #122A0D 114%);
     color: var(--color-text);
     -webkit-font-smoothing: antialiased;
 
@@ -81,4 +81,4 @@ a{
   ::-webkit-scrollbar-thumb:hover {
     background: #fff;
   }
-`
+`;

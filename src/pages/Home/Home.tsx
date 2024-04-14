@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { HomeWrapper } from "./styles";
-import { getCategories } from "../../services/getMovieCategories";
+import { getCategories, Genre } from "../../services/getMovieCategories";
 
 import { ShowHome } from '../../components/MovieHome/ShowHome'
 
@@ -11,7 +11,7 @@ export const Home = () => {
 
 
 
-    const [category, setCategory] = useState<unknown[]>([]);
+    const [category, setCategory] = useState<Genre[]>([]);
 
     useEffect(() => {
         const fetchCategory = async () => {
