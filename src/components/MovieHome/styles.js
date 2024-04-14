@@ -14,6 +14,11 @@ export const ShowHomeWrapper = styled.div`
   position: relative;
   transition: ease 1s all;
 
+          @media (max-width: 500px) {
+            height: 95vh;
+
+    }
+
   .maincontent{
     display: flex;
     flex-direction: column;
@@ -22,6 +27,13 @@ export const ShowHomeWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+
+
+
+                    @media (max-width: 500px) {
+  margin-top: -15vh;
+    }
+
 
     .caroselWrapper{
       width: 100%;
@@ -34,6 +46,8 @@ export const ShowHomeWrapper = styled.div`
     z-index: 500;
 
     margin: 0;
+
+
 
     }
         
@@ -50,6 +64,10 @@ export const ShowHomeWrapper = styled.div`
       flex-direction: column;
       align-items: start;
       gap: 5%;
+                @media (max-width: 500px) {
+            top: -3vh;
+            height: 25vh;
+    }
 
       .ButtonsWrapper{
         display: flex;
@@ -71,7 +89,12 @@ export const ShowHomeWrapper = styled.div`
     position: absolute;
     top: -2px;
     left: 0; 
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        @media (max-width: 500px) {
+           top: 7vh;
+              height: 60px;
+
+    }
   }
 
 
@@ -82,6 +105,10 @@ export const ShowHomeWrapper = styled.div`
     bottom: 0;
     left: 0; 
     background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+            @media (max-width: 500px) {
+              width:15%;
+    }
   }
 
   .overblur{
@@ -90,6 +117,12 @@ export const ShowHomeWrapper = styled.div`
     position: absolute;
     bottom: 0;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+
+        @media (max-width: 500px) {
+          bottom: 45vh;
+              height: 35vh;
+
+    }
 
   }
 `;

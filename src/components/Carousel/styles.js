@@ -18,6 +18,7 @@ export const CustomSlider = styled(Slider)`
   width: 100%;
 
 
+
       &:hover{
         .slick-prev,
         .slick-next {
@@ -50,7 +51,12 @@ export const CustomSlider = styled(Slider)`
   }
     }
   }
-
+@media (max-width: 500px) {
+  .slick-prev,
+  .slick-next {
+    opacity: 1;
+  }
+}
 
   .slick-prev {
 
