@@ -1,8 +1,10 @@
-import { useEffect, useContext, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { MovieData, getMovieById } from '../../services/getMovieById';
 import { MovieScreen } from './styles';
 import { NoteCalc } from '../../components/NoteCalc/NoteCalc';
+import { getRelacionedMovies, MovieData as MovieDatas } from '../../services/getRelacionedMovies';
+import Carousel from '../../components/Carousel/Carousel';
 
 
 interface IuseParams {
@@ -17,17 +19,27 @@ export const Movie = () => {
 
   const [movie, setMovie] = useState<MovieData | null>(null);
 
+  const [moviesrelacioned, setMoviesrelacioned] = useState<MovieData[]>([]);
+
+
+
+
+
   useEffect(() => {
     const fetchCategoryMovies = async () => {
       const movieService = await getMovieById(id);
       setMovie(movieService);
     };
     fetchCategoryMovies();
+
+    const fetchRelacionedMovies = async () => {
+      const movieRelacionedMovies = await getRelacionedMovies(id);
+      setMoviesrelacioned(movieRelacionedMovies);
+    };
+    fetchRelacionedMovies();
   }, []);
 
-  console.log(movie)
-
-
+  console.log('moviesrelacioned', moviesrelacioned)
 
 
   return <MovieScreen
@@ -36,7 +48,7 @@ export const Movie = () => {
 
     }}
   >
-    <div className="mainMovieWrapper"   >
+    <div className="mainMovieWrapper">
       <div className="moviedetails">
         <h2 className="movietitle">{movie?.title}</h2>
         <p className="moviedetail">{movie?.overview}</p>
@@ -47,6 +59,14 @@ export const Movie = () => {
         <NoteCalc noteAverage={movie?.vote_average} />
       </div>
     </div>
+    <div className="caroselWrapper">
+      <Carousel
+        typeOfStyle={'min'}
+        movies={moviesrelacioned} />
+
+    </div>
+
+
     <div className="bottomblur"></div>
     <div className="leftblur"></div>
     <div className="overblur"></div>

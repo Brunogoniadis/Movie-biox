@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const MovieScreen = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-size: 100%;
@@ -22,7 +23,9 @@ export const MovieScreen = styled.div`
     flex-direction: column;
     align-items: start;
     gap: 5%;
+    margin-top: 150px;
 
+    margin-bottom: 150px;
     .ButtonsWrapper {
       display: flex;
       flex-direction: row;
@@ -31,7 +34,29 @@ export const MovieScreen = styled.div`
       width: 100%;
       gap: 2%;
     }
+  
   }
+
+      .caroselWrapper{
+
+      width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 500;
+
+    margin: 0;
+    margin-bottom: 10%;
+
+    }
+        
+    .caroselWrapper:hover  {
+      opacity: 1 !important;
+    }
+
 
   .bottomblur {
     width: 100%;

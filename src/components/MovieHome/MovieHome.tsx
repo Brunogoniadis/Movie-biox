@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import { getMoviesByPopularity, MovieData } from "../../services/getMovieByPopularity";
+import { MovieData } from "../../services/getMovieByPopularity";
 import { MovieWrapper } from "./styles";
 import PlayButton from "../PlayButton/PlayButton";
 import InfoButton from "../InfoButton/InfoButton";
 import Carousel from "../Carousel/Carousel";
-import { getCategories } from "../../services/getCategories";
 import { getMoviesCategory } from "../../services/getMoviesOfCategory";
 
 
@@ -24,19 +23,10 @@ export const MovieHome = (props: MovieHomeProps) => {
     const [movies, setMovies] = useState<MovieData[]>([]);
     const [movieSuggested, setMovieSuggested] = useState<number>(1);
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
-    const [movieCategory, setMovieCategory] = useState<unknown[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
-    const [carouselUp, setCarouselUp] = useState<string>("");
 
     const movieWrapperRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const fetchCategoryMovies = async () => {
-            const categories = await getCategories();
-            setMovieCategory(categories);
-        };
-        fetchCategoryMovies();
-    }, []);
 
     useEffect(() => {
         const fetchAndDisplayMovies = async () => {
@@ -62,10 +52,8 @@ export const MovieHome = (props: MovieHomeProps) => {
 
                 if (isCentered) {
                     setCarouselOpacity(1);
-                    setCarouselUp("10px")
                 } else {
                     setCarouselOpacity(0.3);
-                    setCarouselUp("0px")
                 }
             }
         };

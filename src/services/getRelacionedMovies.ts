@@ -9,27 +9,26 @@ export interface MovieData {
   original_title: string;
   overview: string;
   popularity: number;
-  poster_path: string;
+  poster_path: string | null;
   release_date: string;
-  runtime?: string;
   title: string;
   video: boolean;
   vote_average: number;
   vote_count: number;
 }
 
-export const getMovieById = async (
+export const getRelacionedMovies = async (
   movieId: string | undefined
-): Promise<MovieData | null> => {
+): Promise<MovieData[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`;
+  const apiUrl: string = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?api_key=${apiKey}`;
 
   try {
     const response = await axios.get(apiUrl);
-    return response.data;
+    return response.data.results;
   } catch (error) {
     console.error("Error:", error);
-    return null;
+    return [];
   }
 };

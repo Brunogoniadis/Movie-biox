@@ -97,7 +97,6 @@ export const CustomSlider = styled(Slider)`
 
 
   .slick-list{
-    height: 320px;
     overflow: hidden;
     display: grid;
 
@@ -106,7 +105,9 @@ export const CustomSlider = styled(Slider)`
 
     .slick-track{
       overflow: hidden;
-      width: 1080px;
+      width: 100vw;
+
+
     }
 
 
@@ -115,45 +116,76 @@ export const CustomSlider = styled(Slider)`
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        
+
     }
   }
 
 `
 
 export const Item = styled.div`
-  width: 210px;
-  height: 310px;
+
   display: flex;
   flex-direction: column; 
   align-items: flex-end; 
   justify-content: flex-end;
-
-
-.image {
-  height: 310px;
-  width: 100%;
-  background-repeat: no-repeat;
-  object-fit: contain;
-  background-color: #D2D2D2;
-  border-radius: 5%;
-  z-index: 500;
-  display: flex;
+  width: ${props => props.width};
+  height: ${props => props.height};
   position: relative;
-  transition: all 0.3s ease; /* Adicionando transição para suavizar a mudança de escala */
+  
+.textContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+    width: ${props => props.width};
+  text-align: start;
+}
+
+.pTitle {
+  margin-bottom: 5px;
+  width: 80%;
+  height: 10%;
+
+}
+.pSub {
+  margin-top: 5px;
+  width: 80%;
+  height: 10%;
+  font-size: 10px;
+}
+
+.starContainer{
+  width: 100%;
+  height: 55%;
+  display: flex;
+    align-items: end !important;
+  justify-content: flex-start;
+}
 
 
+
+
+  .image {
+    width: ${props => props.width};
+    height: ${props => props.height};
+      border-radius: ${props => props.borderRadius};
+filter: brightness(0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: contain;
+  display: flex;
+
+  transition: all 0.3s ease; 
+    position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease; 
+
+
+
+
+  
   }
 
-  .title {    
-    display: flex;
-    position: relative;
-
-    width: 210px;
-    height: 50px;
-    margin-top: -40px;
-    z-index: 501;
-    font-size: 20px;
-    font-weight: bold;
-  }
 `;
