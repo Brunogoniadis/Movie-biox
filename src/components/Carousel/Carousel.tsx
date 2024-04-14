@@ -56,6 +56,16 @@ const Carousel = (props: CarouselProps) => {
     slidesToShow: caroselItems,
     slidesToScroll: 1,
     autoplay: false,
+
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
 
