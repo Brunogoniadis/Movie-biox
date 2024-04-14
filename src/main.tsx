@@ -10,6 +10,7 @@ import { Home } from './pages/Home/Home.tsx'
 
 
 import { Search } from './pages/Search/Search.tsx'
+import { Tv } from './pages/Tv/Tv.tsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -21,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route element={<App />}>
 
-          <Route path="/tv" element={<Home />} />
+          <Route path="/tv" element={<Tv />} />
           <Route path="/" element={<Home />} />
 
           <Route path="movie/:id" element={<Movie />} />

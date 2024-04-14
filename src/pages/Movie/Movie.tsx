@@ -62,7 +62,7 @@ export const Movie = () => {
     <div className="caroselWrapper">
       <Carousel
         typeOfStyle={'min'}
-        movies={moviesrelacioned} />
+        data={moviesrelacioned} />
 
     </div>
 

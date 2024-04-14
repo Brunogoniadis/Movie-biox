@@ -2,10 +2,11 @@ import { CustomSlider, Item } from './styles';
 import { NoteCalc } from '../NoteCalc/NoteCalc';
 import { Link } from 'react-router-dom';
 
-interface Movie {
+interface Data {
   adult: boolean;
   backdrop_path: string | null;
   genre_ids: number[];
+  name: string;
   id: number;
   original_language: string;
   original_title: string;
@@ -21,13 +22,14 @@ interface Movie {
 }
 
 interface CarouselProps {
-  movies: Movie[];
+  data: Data[];
   typeOfStyle?: string
 }
 
 const Carousel = (props: CarouselProps) => {
-  const { movies, typeOfStyle } = props;
+  const { data: movies, typeOfStyle } = props;
 
+  console.log('data', movies)
 
   let height = '310px';
   let width = 'auto';
@@ -88,11 +90,11 @@ const Carousel = (props: CarouselProps) => {
             <img
               referrerPolicy="no-referrer"
               className="image"
-              src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Movie]}`}
+              src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Data]}`}
               alt={movie.title}
             />
             <div className="textContainer">
-              <p className="pTitle">{movie.title}</p>
+              <p className="pTitle">{movie.title || movie.name}</p>
               <p className="pSub">id:{movie.id}</p>
               <div className="starContainer">
                 <NoteCalc typeOfStyle='min' noteAverage={movie?.vote_average} />
