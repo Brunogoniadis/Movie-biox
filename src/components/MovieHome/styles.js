@@ -35,6 +35,11 @@ export const MovieWrapper = styled.div`
 
     margin: 0;
     margin-bottom: 10%;
+
+    }
+        
+    .caroselWrapper:hover  {
+      opacity: 1 !important;
     }
 
     .mainMovieWrapper{

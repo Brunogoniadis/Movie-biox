@@ -64,7 +64,7 @@ export const MovieHome = (props: MovieHomeProps) => {
                     setCarouselOpacity(1);
                     setCarouselUp("10px")
                 } else {
-                    setCarouselOpacity(0.0);
+                    setCarouselOpacity(0.3);
                     setCarouselUp("0px")
                 }
             }
@@ -97,7 +97,7 @@ export const MovieHome = (props: MovieHomeProps) => {
                     </div>
                 </div>
                 <div className="caroselWrapper" style={{ opacity: carouselOpacity, 
-                    transition: "all 0.5s ease" }}>
+                    transition: "all 1.5s ease" }}>
                     <Carousel movies={movies} />
                 </div>
                 <div className="bottomblur" />
