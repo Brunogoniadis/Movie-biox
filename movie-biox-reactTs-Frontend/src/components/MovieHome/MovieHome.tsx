@@ -26,6 +26,8 @@ export const MovieHome = (props: MovieHomeProps) => {
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [movieCategory, setMovieCategory] = useState<unknown[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
+    const [carouselUp, setCarouselUp] = useState<string>("");
+
     const movieWrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -60,8 +62,10 @@ export const MovieHome = (props: MovieHomeProps) => {
 
                 if (isCentered) {
                     setCarouselOpacity(1);
+                    setCarouselUp("10px")
                 } else {
                     setCarouselOpacity(0.0);
+                    setCarouselUp("0px")
                 }
             }
         };
@@ -92,7 +96,8 @@ export const MovieHome = (props: MovieHomeProps) => {
                         <InfoButton />
                     </div>
                 </div>
-                <div className="caroselWrapper" style={{ opacity: carouselOpacity, transition: "opacity 0.5s ease" }}>
+                <div className="caroselWrapper" style={{ opacity: carouselOpacity, 
+                    transition: "all 0.5s ease" }}>
                     <Carousel movies={movies} />
                 </div>
                 <div className="bottomblur" />
