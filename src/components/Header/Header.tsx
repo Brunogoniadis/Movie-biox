@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { HeaderWrapper } from './styles.js';
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import LogoFont from "../../assets/Logo.svg"
 const Header = () => {
     const [searchSize, setSearchSize] = useState('0px');
     const [searchBackgroundColor, setSearchBackgroundColor] = useState('transparent');
@@ -33,8 +33,8 @@ const Header = () => {
 
     const handleExpandClick = () => {
         setSearchSize('210px');
-        setBorderColor('#EA524F');
-        setSearchIcon('#EA524F');
+        setBorderColor('rgb(14, 141, 150)');
+        setSearchIcon('rgb(14, 141, 150)');
         setSearchBackgroundColor('rgba(0, 0, 0, 0.5)');
     };
 
@@ -48,7 +48,12 @@ const Header = () => {
         const mobileWidth = 768;
         setIsMobile(window.innerWidth < mobileWidth);
     };
+    const location = useLocation();
 
+
+    const isRetrospectiveRoute = (path: string) => {
+        return location.pathname === path;
+    };
 
     useEffect(() => {
         checkIsMobile();
@@ -58,11 +63,13 @@ const Header = () => {
 
     if (isMobile) {
         return (
-            <HeaderWrapper>
+            <HeaderWrapper type="aside">
                 <button className="menuIcon" onClick={toggleNav}>
                     <i className="material-icons">menu</i>
                 </button>
-                <h2>Logo</h2>
+                <div className="logo">
+                    <img src={LogoFont} alt="" />
+                </div>
 
                 {isNavVisible && (
                     <nav onClick={toggleNav}>
@@ -100,10 +107,12 @@ const Header = () => {
     }
     return (
         <HeaderWrapper>
-            <h2>Logo</h2>
+            <div className="logo">
+                <img src={LogoFont} alt="" />
+            </div>
             <nav>
-                <Link onClick={handleLinkClick} to="/">Movies</Link>
-                <Link onClick={handleLinkClick} to="/tv">TV Shows</Link>
+                <Link onClick={handleLinkClick} to="/" style={{ color: isRetrospectiveRoute('/') ? 'rgb(14, 141, 150)' : 'inherit' }}>Movies</Link>
+                <Link onClick={handleLinkClick} to="/tv" style={{ color: isRetrospectiveRoute('/tv') ? 'rgb(14, 141, 150)' : 'inherit' }}>TV Shows</Link>
             </nav>
             <div className="formContainer">
                 <form onSubmit={handleSubmitSearch}>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const SearchWrapper = styled.div`
+export const SearchWrapper = styled.section`
   width: 100vw;
   display: flex;
   flex-direction: column;

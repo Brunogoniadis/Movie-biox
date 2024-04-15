@@ -14,6 +14,21 @@ export const HeaderWrapper = styled.header`
   transition: all 1s ease;
   background-image: linear-gradient(to bottom, #000, transparent);
 
+    .logo {
+      
+    width: 130px;
+    height: 16px;
+    object-fit: cover;
+    overflow: visible;
+    margin-left: 3%;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+  }
+
   .formContainer {
     width: 250px;
     display: flex;
@@ -87,9 +102,20 @@ export const HeaderWrapper = styled.header`
     flex-direction: column;
     align-items: center;
 
-    h2 {
-      margin-right: 150px;
-    }
+  .logo {
+    margin-right: 150px;
+    margin-top: 8px;
+    width: 130px;
+    height: 15px;
+    background-color: red;
+    object-fit: cover;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+  }
     .formContainer {
       position: absolute;
       top: 15%;

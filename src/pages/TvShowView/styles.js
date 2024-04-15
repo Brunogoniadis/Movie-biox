@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TvShowScreen = styled.div`
+export const TvShowScreen = styled.section`
   width: 100vw;
   height: 130vh;
   display: flex;

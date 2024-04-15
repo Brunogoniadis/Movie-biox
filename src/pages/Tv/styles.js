@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TvWrapper = styled.div`
+export const TvWrapper = styled.section`
   width: 100vw;
   display: flex;
   justify-content: center;

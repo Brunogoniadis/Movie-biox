@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MovieScreen = styled.div`
+export const MovieScreen = styled.section`
   width: 100vw;
   min-height: 100vh;
   height: auto;
