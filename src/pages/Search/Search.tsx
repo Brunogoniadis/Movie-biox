@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { MovieSearch } from "../../components/MovieSearch/MovieSearch"
 import { SearchWrapper } from "./styles"
-import { getMoviesSearch, MovieData } from "../../services/getMoviesSearch";
+import { getMoviesSearch } from "../../services/getMoviesSearch";
 import { getTVShowsSearch, TVShowData } from "../../services/getTvShowSeach";
 
 import { useSearchParams } from "react-router-dom";
+import { IMovie } from "../../services/types/IMovie";
 
 
 export const Search = () => {
@@ -13,7 +14,7 @@ export const Search = () => {
   const [searchParams] = useSearchParams()
 
   const query: string | null = searchParams.get('q')
-  const [movies, setMovies] = useState<MovieData[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
   const [tvShows, setTvShows] = useState<TVShowData[]>([]);
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { MovieData } from "../../services/getMovieByPopularity";
+import { IMovie } from "../../services/types/IMovie"
 import { ShowHomeWrapper } from "./styles";
 import { PlayButton } from "../PlayButton/PlayButton";
 import Carousel from "../Carousel/Carousel";
@@ -11,7 +11,7 @@ interface IShowHomeProps {
 }
 export const ShowHome = ({ id, category }: IShowHomeProps) => {
 
-    const [movies, setMovies] = useState<MovieData[]>([]);
+    const [movies, setMovies] = useState<IMovie[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);

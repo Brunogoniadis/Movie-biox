@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { MovieData, getMovieById } from '../../services/getMovieById';
+import { getMovieById } from '../../services/getMovieById';
 import { MovieScreen } from './styles';
 import { NoteCalc } from '../../components/NoteCalc/NoteCalc';
 import { getMoviesRelacioned } from '../../services/getMoviesRelacioned';
 import Carousel from '../../components/Carousel/Carousel';
+import { IMovie } from '../../services/types/IMovie';
 
 
 interface IuseParams {
@@ -16,8 +17,8 @@ export const Movie = () => {
 
 
   const { id } = useParams<IuseParams>();
-  const [movie, setMovie] = useState<MovieData | null>(null);
-  const [moviesrelacioned, setMoviesrelacioned] = useState<MovieData[]>([]);
+  const [movie, setMovie] = useState<IMovie | null>(null);
+  const [moviesrelacioned, setMoviesrelacioned] = useState<IMovie[]>([]);
 
   useEffect(() => {
     const fetchCategoryMovies = async () => {
