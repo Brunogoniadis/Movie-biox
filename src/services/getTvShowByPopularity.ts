@@ -1,22 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
+import { ITvShow } from './types/ITvShow';
 
-export interface TVShowData {
-  backdrop_path: string | null;
-  first_air_date: string;
-  genre_ids: number[];
-  id: number;
-  name: string;
-  origin_country: string[];
-  original_language: string;
-  original_name: string;
-  overview: string;
-  popularity: number;
-  poster_path: string | null;
-  vote_average: number;
-  vote_count: number;
-}
-
-export const getTVShowsByPopularity = async (): Promise<TVShowData[]> => {
+export const getTVShowsByPopularity = async (): Promise<ITvShow[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
   const apiUrl = `https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=${apiKey}`;
@@ -25,7 +10,7 @@ export const getTVShowsByPopularity = async (): Promise<TVShowData[]> => {
     const response = await axios.get(apiUrl);
     return response.data.results;
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
     return [];
   }
 };

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { TvWrapper } from "./styles";
 import { getTVShowCategories, Genre } from "../../services/getTVShowCategories";
-import { getTVShowsByCategory, TVShowData } from "../../services/getTVShowOfCategory";
+import { getTVShowsByCategory } from "../../services/getTVShowOfCategory";
 import Carousel from "../../components/Carousel/Carousel";
+import { ITvShow } from "../../services/types/ITvShow";
 
 const RenderCategoryCarousel = ({ idOfCategory }: { idOfCategory: number }) => {
-    const [shows, setShows] = useState<TVShowData[]>([]);
+    const [shows, setShows] = useState<ITvShow[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [reachedLastItem, setReachedLastItem] = useState<boolean>(false);
 

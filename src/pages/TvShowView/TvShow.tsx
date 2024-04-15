@@ -3,8 +3,9 @@ import { useParams } from 'react-router-dom'
 import { TVShowData, getTVShowById } from '../../services/getTvShowById';
 import { TvShowScreen } from './styles';
 import { NoteCalc } from '../../components/NoteCalc/NoteCalc';
-import { getTVShowRelacioned, TVShowDataRelacioned } from '../../services/getTVShowRelacioned';
+import { getTVShowRelacioned } from '../../services/getTVShowRelacioned';
 import Carousel from '../../components/Carousel/Carousel';
+import { ITvShow } from '../../services/types/ITvShow';
 
 interface IuseParams {
   id: string | undefined;
@@ -14,7 +15,7 @@ interface IuseParams {
 export const TvShow = () => {
   const { id } = useParams<IuseParams>();
   const [tvShow, setTvShow] = useState<TVShowData | null>(null);
-  const [tvShowsRelacioned, setTvShowsRelacioned] = useState<TVShowDataRelacioned[]>([]);
+  const [tvShowsRelacioned, setTvShowsRelacioned] = useState<ITvShow[]>([]);
 
   useEffect(() => {
     const fetchTvShow = async () => {
