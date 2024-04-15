@@ -20,6 +20,9 @@ export const SearchWrapper = styled.section`
     text-align: start;
   }
 
+  h3::first-letter {
+    visibility: hidden;
+  }
   .mainGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -30,4 +33,10 @@ export const SearchWrapper = styled.section`
     width: 100%;
     height: 100%;
   }
+  @media (max-width: 500px) {
+    .mainGrid {
+        display: flex;
+        flex-direction: column;
+    }
+}
 `;

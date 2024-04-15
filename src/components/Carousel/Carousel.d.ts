@@ -1,6 +1,5 @@
 import { FC } from 'react'
 
-import { MovieData } from '../../services/getMovieByPopularity'
 
 interface CarouselProps {
   movies: MovieData[]

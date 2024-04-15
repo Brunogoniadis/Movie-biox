@@ -46,15 +46,23 @@ export const ShowHomeWrapper = styled.div`
 
     .mainMovieWrapper {
       align-self: flex-start;
-      top: 10%;
+      top: -10%;
       left: 10%;
       z-index: 500;
       display: flex;
       flex-direction: column;
+      
       align-items: start;
-      gap: 5%;
+
+      h2,
+      p,
+      div{
+        margin-bottom:15px
+      }
+
       @media (max-width: 500px) {
-        top: -3vh;
+      left: 10%;
+        top: 3vh;
         height: 25vh;
       }
 

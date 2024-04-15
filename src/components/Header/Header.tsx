@@ -67,9 +67,13 @@ const Header = () => {
                 <button className="menuIcon" onClick={toggleNav}>
                     <i className="material-icons">menu</i>
                 </button>
-                <div className="logo">
-                    <img src={LogoFont} alt="" />
-                </div>
+
+                <Link to="/">
+                    <div className="logo">
+                        <img src={LogoFont} alt="" />
+                    </div>
+
+                </Link>
 
                 {isNavVisible && (
                     <nav onClick={toggleNav}>

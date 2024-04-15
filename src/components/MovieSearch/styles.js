@@ -19,6 +19,12 @@ export const MovieSearchWrapper = styled.div`
     padding: 5%;
     z-index: 499;
 
+    @media (max-width: 500px) {
+        width: 250px;
+        height: 150px;
+}
+
+
     &::after {
         content: "";
         position: absolute;

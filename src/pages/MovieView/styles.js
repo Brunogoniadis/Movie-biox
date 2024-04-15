@@ -101,10 +101,12 @@ export const MovieScreen = styled.section`
 
     @media (max-width: 500px) {
       width: 60vw;
+
       height: 700px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      overflow: hidden;
     }
   }
 
@@ -119,6 +121,14 @@ export const MovieScreen = styled.section`
     margin-bottom: 25px;
     @media (max-width: 500px) {
       margin-bottom: 75px;
+
+    max-height: calc(1.5em * 5); 
+    line-height: 1.5em; 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: horizontal;
+
     }
   }
 `;
