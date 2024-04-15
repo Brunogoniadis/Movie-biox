@@ -3,48 +3,62 @@ import { TvWrapper } from "./styles";
 import { getTVShowCategories, Genre } from "../../services/getTVShowCategories";
 import { getTVShowsByCategory, TVShowData } from "../../services/getTVShowOfCategory";
 import Carousel from "../../components/Carousel/Carousel";
+import React from "react";
+
+
+const RenderCategoryCarousel = ({ idOfCategory }: { idOfCategory: number }) => {
+    const [shows, setShows] = useState<TVShowData[]>([]);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [reachedLastItem, setReachedLastItem] = useState<boolean>(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const fetchedShows = await getTVShowsByCategory(idOfCategory, currentPage);
+            setShows(prevShows => [...prevShows, ...fetchedShows]);
+            setReachedLastItem(fetchedShows.length === 0);
+        };
+
+        if (idOfCategory && !reachedLastItem) {
+            fetchData();
+        }
+    }, [idOfCategory, currentPage, reachedLastItem]);
+
+    const handleLastItemReached = () => {
+        setCurrentPage(prevPage => prevPage + 1);
+    };
+
+    console.log('shows', shows);
+
+    return (
+        <Carousel
+            data={shows}
+            typeOfStyle="min"
+            onLastItemReached={handleLastItemReached}
+        />
+    );
+};
 
 export const Tv = () => {
-
-    const [categoriesWithShows, setCategoriesWithShows] = useState<{ category: Genre, shows: TVShowData[] }[]>([]);
+    const [categories, setCategories] = useState<Genre[]>([]);
 
     useEffect(() => {
         const fetchCategoriesAndShows = async () => {
-            try {
-                const categories = await getTVShowCategories();
-                const categoriesWithShowsPromises = categories.map(async (category) => {
-                    const shows = await getTVShowsByCategory(category.id);
-                    return { category, shows };
-                });
-                const categoriesWithShowsData = await Promise.all(categoriesWithShowsPromises);
-                setCategoriesWithShows(categoriesWithShowsData);
-            } catch (error) {
-                console.error("Error fetching categories and shows:", error);
-            }
+            const categoriesFetch = await getTVShowCategories();
+            setCategories(categoriesFetch);
         };
-
         fetchCategoriesAndShows();
     }, []);
-
 
     return (
         <TvWrapper>
             <div className="maincontent">
 
-                <div className="caroselWrapper">
+                {categories.map(({ id }) => (
+                    <div className="caroselWrapper">
+                        <RenderCategoryCarousel idOfCategory={id} />
+                    </div>
+                ))}
 
-                    {categoriesWithShows.map(({ category, shows }) => (
-                        <>
-                            <h3>{category.name}</h3>
-                            <Carousel data={shows} typeOfStyle="min" />
-                        </>
-
-                    ))}
-                </div>
-
-                <div className="bottomblur" />
-                <div className="leftblur" />
-                <div className="overblur" />
             </div>
         </TvWrapper>
     );

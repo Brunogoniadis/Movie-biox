@@ -17,11 +17,12 @@ export interface TVShowDataRelacioned {
 }
 
 export const getTVShowRelacioned = async (
-  tvShowId: string | undefined
+  tvShowId: string | undefined,
+  page: number = 1
 ): Promise<TVShowDataRelacioned[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
-
-  const apiUrl: string = `https://api.themoviedb.org/3/tv/${tvShowId}/recommendations?api_key=${apiKey}`;
+  console.log("page", page);
+  const apiUrl: string = `https://api.themoviedb.org/3/tv/${tvShowId}/recommendations?api_key=${apiKey}&page=${page}`;
 
   try {
     const response = await axios.get(apiUrl);

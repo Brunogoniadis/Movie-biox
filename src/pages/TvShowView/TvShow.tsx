@@ -21,12 +21,12 @@ export const TvShow = () => {
       const tvShowData = await getTVShowById(id);
       setTvShow(tvShowData);
     };
-    fetchTvShow();
-
     const fetchRelacionedTvShows = async () => {
       const relacionedTvShows = await getTVShowRelacioned(id);
       setTvShowsRelacioned(relacionedTvShows);
     };
+    fetchTvShow();
+
     fetchRelacionedTvShows();
   }, [id]);
 
@@ -41,7 +41,9 @@ export const TvShow = () => {
       <div className="mainTvShowWrapper">
         <div className="TvShowdetails">
           <h2 className="movietitle">{tvShow?.name}</h2>
-          <p className="tvDetail">{tvShow?.overview}</p>
+          <p className="tvDetail"
+            style={{height:'90px'}}
+          >{tvShow?.overview}</p>
           <p className="tvDetail">Release Date: {tvShow?.first_air_date}</p>
           <p className="tvDetail">Number of Sessions: {tvShow?.number_of_seasons}</p>
           <p className="tvDetail">Number of Episodes: {tvShow?.number_of_episodes}</p>

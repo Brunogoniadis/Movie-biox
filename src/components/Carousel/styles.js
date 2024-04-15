@@ -10,6 +10,7 @@ export const CustomSlider = styled(Slider)`
   }
 
 
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -104,8 +105,11 @@ export const CustomSlider = styled(Slider)`
   .slick-list{
     overflow: hidden;
     display: grid;
-
+          transition: ease-in 500ms filter;
     margin-bottom: 2rem;
+    filter: blur(${props => props.blurFilter});
+
+
 
 
     .slick-track{
@@ -126,7 +130,6 @@ export const CustomSlider = styled(Slider)`
           transition: ease-in 0.5ms all;
         :hover{
           margin-top: -2px;
-
 }
         
     }

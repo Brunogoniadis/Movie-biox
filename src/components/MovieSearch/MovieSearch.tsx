@@ -20,7 +20,7 @@ export const MovieSearch = ({ title, backdrop_path, poster_path, vote_average, i
         <Link to={typeOfMedia === "movie" ? `/movie/${id}` : `/tvShow/${id}`}
         >
             <MovieSearchWrapper
-                background={`url(https://image.tmdb.org/t/p/original/${backdrop_path || poster_path})`}
+                background={`url(https://image.tmdb.org/t/p/w500/${backdrop_path || poster_path})`}
             >
                 <p>{title}</p>
 

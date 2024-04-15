@@ -45,13 +45,13 @@ export const Movie = () => {
   return <MovieScreen
     style={{
       backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
-
     }}
   >
     <div className="mainMovieWrapper">
       <div className="moviedetails">
         <h2 className="movietitle">{movie?.title}</h2>
-        <p className="moviedetail">{movie?.overview}</p>
+        <p className="moviedetail" style={{ height: '90px' }}
+        >{movie?.overview}</p>
         <p className="moviedetail">Release Date: {movie?.release_date}</p>
         <p className="moviedetail">Runtime: {movie?.runtime} minutes</p>
         <p className="moviedetail">Average Vote: {movie?.vote_average}</p>

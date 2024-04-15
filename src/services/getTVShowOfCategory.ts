@@ -17,11 +17,12 @@ export interface TVShowData {
 }
 
 export const getTVShowsByCategory = async (
-  genreId: number
+  genreId: number,
+  page: number = 1,
 ): Promise<TVShowData[]> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const apiUrl: string = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${genreId}`;
+  const apiUrl: string = `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&with_genres=${genreId}&page=${page}`;
 
   try {
     const response = await axios.get(apiUrl);

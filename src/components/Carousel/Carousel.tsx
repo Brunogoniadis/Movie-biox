@@ -26,12 +26,13 @@ interface CarouselProps {
   data: Data[];
   typeOfStyle?: string;
   typeOfMedia?: string;
-  onLastItemReached?: () => void | undefined; 
+  onLastItemReached?: () => void | undefined;
 }
 
 const Carousel = (props: CarouselProps) => {
   const { data: movies, typeOfStyle, typeOfMedia, onLastItemReached } = props;
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [isLoad, setIsLoad] = useState<string>('0px');
 
   let height = '310px';
   let width = 'auto';
@@ -57,7 +58,7 @@ const Carousel = (props: CarouselProps) => {
     infinite: false,
     speed: 320,
     slidesToShow: caroselItems,
-    slidesToScroll: 1,
+    slidesToScroll: 5,
     autoplay: false,
     cssEase: 'ease-in-out',
     responsive: [
@@ -78,12 +79,18 @@ const Carousel = (props: CarouselProps) => {
 
   useEffect(() => {
     if (currentSlide === movies.length && onLastItemReached && movies.length > 0) {
+      setIsLoad("8px")
       const timeoutId = setTimeout(() => {
         onLastItemReached();
-      }, 1000); 
-      return () => clearTimeout(timeoutId); 
+      }, 1000);
+      return () => clearTimeout(timeoutId);
     }
+    setIsLoad("0px")
+
   }, [currentSlide, movies.length, onLastItemReached]);
+
+
+
 
   return (
     <CustomSlider
@@ -91,7 +98,9 @@ const Carousel = (props: CarouselProps) => {
       height={height}
       width={width}
       arrowContainerHeight={arrowContainerHeight}
+      blurFilter={isLoad}
     >
+
       {movies.map((movie, index) => (
         <Link
           key={index}
@@ -106,7 +115,7 @@ const Carousel = (props: CarouselProps) => {
             <img
               referrerPolicy="no-referrer"
               className="image"
-              src={`https://image.tmdb.org/t/p/original${movie[backgroundCard as keyof Data]}`}
+              src={`https://image.tmdb.org/t/p/w500${movie[backgroundCard as keyof Data]}`}
               alt={movie.title}
             />
             <div className="textContainer">

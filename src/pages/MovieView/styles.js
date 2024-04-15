@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+
+
+
 export const MovieScreen = styled.div`
   width: 100vw;
   min-height: 100vh;
@@ -12,7 +15,8 @@ export const MovieScreen = styled.div`
   background-position: center top;
   background-repeat: no-repeat;
   position: relative;
-  transition: ease 1s all;
+  
+  transition: ease 2s background;
 
 
   .mainMovieWrapper {
@@ -87,9 +91,19 @@ export const MovieScreen = styled.div`
 
   .moviedetails {
     
-    margin-top: 5%;
     border-radius: 8px;
-    width: 55%;
+
+
+        width: 955px;
+    height: 300px;
+
+                        @media (max-width: 500px) {
+    width: 60vw;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
     
   }
 

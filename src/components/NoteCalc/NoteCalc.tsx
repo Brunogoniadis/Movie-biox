@@ -34,28 +34,17 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
 
         const starsArray: JSX.Element[] = [];
 
-        const addStar = (index: number) => {
-            starsArray.push(<i key={index} className={`material-icons icon-small ${starClass}`}>star</i>);
-            setStars([...starsArray]);
+        for (let i = 0; i < ratingInt; i++) {
+            starsArray.push(<i key={i} className={`material-icons icon-small ${starClass}`}>star</i>);
+        }
 
-            if (index < ratingInt) {
-                setTimeout(() => {
-                    addStar(index + 1);
-                }, 100);
-            } else if (decimalPart >= 0.25 && decimalPart < 0.75) {
-                setTimeout(() => {
-                    starsArray.push(<i key="half" className={`material-icons icon-small ${starClass}`}>star_half</i>);
-                    setStars([...starsArray]);
-                }, 100);
-            } else if (decimalPart >= 0.75) {
-                setTimeout(() => {
-                    starsArray.push(<i key="full" className={`material-icons icon-small ${starClass}`}>star</i>);
-                    setStars([...starsArray]);
-                }, 100);
-            }
-        };
+        if (decimalPart >= 0.25 && decimalPart < 0.75) {
+            starsArray.push(<i key="half" className={`material-icons icon-small ${starClass}`}>star_half</i>);
+        } else if (decimalPart >= 0.75) {
+            starsArray.push(<i key="full" className={`material-icons icon-small ${starClass}`}>star</i>);
+        }
 
-        addStar(0);
+        setStars(starsArray);
     };
 
     const calculateStarsWithoutAnimation = (average: number) => {

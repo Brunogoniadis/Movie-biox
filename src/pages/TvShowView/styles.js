@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TvShowScreen = styled.div`
   width: 100vw;
-  height: auto;
+  height: 130vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +49,7 @@ export const TvShowScreen = styled.div`
     z-index: 500;
 
     margin: 0;
-    margin-bottom: 10%;
+    margin-top: 5%;
 
     }
         
@@ -86,10 +86,19 @@ export const TvShowScreen = styled.div`
 
   .TvShowdetails {
     
-    margin-top: 5%;
     border-radius: 8px;
-    width: 55%;
-    
+   
+    height: 300px;
+
+
+                        @media (max-width: 500px) {
+    width: 60vw;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    }
+
   }
 
   .tvTitle {

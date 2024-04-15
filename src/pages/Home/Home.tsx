@@ -61,7 +61,6 @@ export const Home = () => {
                             />
                         </div>
                     ))}
-                    {loading && <div>Loading...</div>}
                 </div>
             </HomeWrapper>
         </>
