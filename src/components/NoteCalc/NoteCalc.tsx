@@ -4,7 +4,6 @@ import { NoteWrapper } from './styles';
 interface IStarsCalcProps {
     noteAverage: number | undefined;
     typeOfStyle?: string
-
 }
 
 export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
@@ -37,16 +36,13 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
         for (let i = 0; i < ratingInt; i++) {
             starsArray.push(<i key={i} className={`material-icons icon-small ${starClass}`}>star</i>);
         }
-
         if (decimalPart >= 0.25 && decimalPart < 0.75) {
             starsArray.push(<i key="half" className={`material-icons icon-small ${starClass}`}>star_half</i>);
         } else if (decimalPart >= 0.75) {
             starsArray.push(<i key="full" className={`material-icons icon-small ${starClass}`}>star</i>);
         }
-
         setStars(starsArray);
     };
-
     const calculateStarsWithoutAnimation = (average: number) => {
         const starsArray: JSX.Element[] = [];
         const ratingInt = Math.round(average);
@@ -54,16 +50,13 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
         for (let i = 0; i < ratingInt; i++) {
             starsArray.push(<i key={i} className={`material-icons icon-small ${starClass}`}>star</i>);
         }
-
         if (average - ratingInt >= 0.25 && average - ratingInt < 0.75) {
             starsArray.push(<i key="half" className={`material-icons icon-small ${starClass}`}>star_half</i>);
         } else if (average - ratingInt >= 0.75) {
             starsArray.push(<i key="full" className={`material-icons icon-small ${starClass}`}>star</i>);
         }
-
         setStars(starsArray);
     };
-
     return (
         <NoteWrapper starWidth={starWidth}>
             {stars}

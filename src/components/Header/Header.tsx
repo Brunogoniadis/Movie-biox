@@ -9,9 +9,14 @@ const Header = () => {
     const [searchIcon, setSearchIcon] = useState('white');
     const [searchTerm, setSearchTerm] = useState('');
     const [isMobile, setIsMobile] = useState(false);
-    const [isNavVisible, setIsNavVisible] = useState(false); // Adicionando estado para controlar a visibilidade da navegação
+    const [isNavVisible, setIsNavVisible] = useState(false);
 
     const navigate = useNavigate();
+
+    const handleLinkClick = () => {
+        setIsNavVisible(false);
+    };
+
 
     const handleSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -34,36 +39,39 @@ const Header = () => {
     };
 
     const toggleNav = () => {
-        setIsNavVisible(!isNavVisible); 
-        
+        setIsNavVisible(!isNavVisible);
+
     };
 
-    // Função para verificar se o dispositivo é móvel
+
     const checkIsMobile = () => {
-        const mobileWidth = 768; // Defina aqui a largura que considera ser de um dispositivo móvel
+        const mobileWidth = 768;
         setIsMobile(window.innerWidth < mobileWidth);
     };
 
-    // Adiciona um listener de resize para atualizar o estado quando a largura da tela muda
+
     useEffect(() => {
         checkIsMobile();
         window.addEventListener('resize', checkIsMobile);
         return () => window.removeEventListener('resize', checkIsMobile);
     }, []);
 
-    // Se for mobile, retorna o layout de navbar
     if (isMobile) {
         return (
             <HeaderWrapper>
-                <button className="menu-icon" onClick={toggleNav}>
+                <button className="menuIcon" onClick={toggleNav}>
                     <i className="material-icons">menu</i>
                 </button>
                 <h2>Logo</h2>
 
                 {isNavVisible && (
-                    <nav>
-                        <Link to="/">Movies</Link>
-                        <Link to="/tv">TV Shows</Link>
+                    <nav onClick={toggleNav}>
+                        <button onClick={handleExpandClick}>
+                            <Link to="/">Movies</Link>
+                        </button>
+                        <button onClick={handleExpandClick}>
+                            <Link to="/tv">TV Shows</Link>
+                        </button>
                     </nav>
                 )}
                 <div className="formContainer">
@@ -90,14 +98,12 @@ const Header = () => {
             </HeaderWrapper>
         );
     }
-
-    // Se não for mobile, retorna o layout padrão
     return (
         <HeaderWrapper>
             <h2>Logo</h2>
             <nav>
-                <Link to="/">Movies</Link>
-                <Link to="/tv">TV Shows</Link>
+                <Link onClick={handleLinkClick} to="/">Movies</Link>
+                <Link onClick={handleLinkClick} to="/tv">TV Shows</Link>
             </nav>
             <div className="formContainer">
                 <form onSubmit={handleSubmitSearch}>

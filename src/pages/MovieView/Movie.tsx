@@ -16,14 +16,8 @@ export const Movie = () => {
 
 
   const { id } = useParams<IuseParams>();
-
   const [movie, setMovie] = useState<MovieData | null>(null);
-
   const [moviesrelacioned, setMoviesrelacioned] = useState<MovieData[]>([]);
-
-
-
-
 
   useEffect(() => {
     const fetchCategoryMovies = async () => {
@@ -39,9 +33,6 @@ export const Movie = () => {
     fetchRelacionedMovies();
   }, [id]);
 
-  console.log('moviesrelacioned', moviesrelacioned)
-
-
   return <MovieScreen
     style={{
       backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
@@ -55,7 +46,6 @@ export const Movie = () => {
         <p className="moviedetail">Release Date: {movie?.release_date}</p>
         <p className="moviedetail">Runtime: {movie?.runtime} minutes</p>
         <p className="moviedetail">Average Vote: {movie?.vote_average}</p>
-
         <NoteCalc noteAverage={movie?.vote_average} />
       </div>
     </div>
@@ -64,10 +54,7 @@ export const Movie = () => {
         typeOfStyle={'min'}
         typeOfMedia='movie'
         data={moviesrelacioned} />
-
     </div>
-
-
     <div className="bottomblur"></div>
     <div className="leftblur"></div>
     <div className="overblur"></div>

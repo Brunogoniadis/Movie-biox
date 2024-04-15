@@ -10,11 +10,8 @@ export const MovieSearchWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-
     transition: all ease-in-out 1ms;
-
     border-radius: 15px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -34,15 +31,10 @@ export const MovieSearchWrapper = styled.div`
         border-radius: 15px;
     }
 
-
-
     > p ,div {
         z-index: 500;
         font-size: 18px;
         font-weight: bold;
-
     }
-
-    
 
 `;

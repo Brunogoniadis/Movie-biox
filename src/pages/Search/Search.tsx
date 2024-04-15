@@ -13,11 +13,8 @@ export const Search = () => {
   const [searchParams] = useSearchParams()
 
   const query: string | null = searchParams.get('q')
-
-
   const [movies, setMovies] = useState<MovieData[]>([]);
   const [tvShows, setTvShows] = useState<TVShowData[]>([]);
-
 
   useEffect(() => {
     const fetchAndDisplayMovies = async () => {
@@ -29,15 +26,9 @@ export const Search = () => {
       const tvShows = await getTVShowsSearch(query);
       setTvShows(tvShows);
     };
-
     fetchAndDisplayTvShows()
     fetchAndDisplayMovies();
-
-
   }, [query]);
-
-
-  console.log('movies', movies)
 
   return (
     <SearchWrapper>
@@ -72,7 +63,6 @@ export const Search = () => {
           />
         ))}
       </div>
-
     </SearchWrapper>
   )
 }

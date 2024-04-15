@@ -6,16 +6,13 @@ export const HeaderWrapper = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
-  height: 80px; 
+  height: 80px;
   z-index: 1001;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-  background-image: linear-gradient(to bottom, #000,  transparent);
-
-
-
+  background-image: linear-gradient(to bottom, #000, transparent);
 
   .formContainer {
     width: 250px;
@@ -64,6 +61,12 @@ export const HeaderWrapper = styled.header`
     display: flex;
     align-items: center;
     gap: 15px;
+    button {
+      background-color: transparent;
+      border: none;
+      margin-bottom: 12px;
+      z-index: 499;
+    }
     link {
       color: #fff;
       text-decoration: none;
@@ -71,6 +74,7 @@ export const HeaderWrapper = styled.header`
       font-weight: bold;
       transition: color 0.3s ease;
       font-size: 16px;
+      z-index: 500;
       &:hover {
         color: #f65261;
       }
@@ -83,17 +87,15 @@ export const HeaderWrapper = styled.header`
     flex-direction: column;
     align-items: center;
 
-    h2{
+    h2 {
       margin-right: 150px;
     }
     .formContainer {
-  position: absolute;
-      top: 15%; 
-  right: 0;
-  width: 200px;
-  justify-content: flex-end; 
-
-      
+      position: absolute;
+      top: 15%;
+      right: 0;
+      width: 200px;
+      justify-content: flex-end;
     }
 
     input {
@@ -105,43 +107,37 @@ export const HeaderWrapper = styled.header`
       right: 10px;
     }
 
-    .navbar-mobile {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      align-items: center;
-    }
 
-    .menu-icon {
+    .menuIcon {
       display: block;
       background: none;
       border: none;
       color: white;
       font-size: 24px;
       cursor: pointer;
-        top: 15%; 
-  left: 5%;
-  display: flex;
-  flex-direction: column;
-    position: absolute;
+      top: 15%;
+      left: 5%;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
     }
 
-nav {
-  position: absolute;
-  top: 5vh; 
-  left: 0;
-  display: flex;
-  align-items: self-start;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.75);
-  gap: 15%;
-  padding: 2%;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  a{
-    text-align: start;
-    margin-bottom: 15%;
-  }
-}
+    nav {
+      position: absolute;
+      top: 5vh;
+      left: 0;
+      display: flex;
+      align-items: self-start;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.75);
+      gap: 15%;
+      padding: 2%;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      a {
+        text-align: start;
+        margin-bottom: 15%;
+      }
+    }
   }
 `;

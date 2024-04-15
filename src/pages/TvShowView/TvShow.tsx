@@ -42,7 +42,7 @@ export const TvShow = () => {
         <div className="TvShowdetails">
           <h2 className="movietitle">{tvShow?.name}</h2>
           <p className="tvDetail"
-            style={{height:'90px'}}
+            style={{ height: '90px' }}
           >{tvShow?.overview}</p>
           <p className="tvDetail">Release Date: {tvShow?.first_air_date}</p>
           <p className="tvDetail">Number of Sessions: {tvShow?.number_of_seasons}</p>

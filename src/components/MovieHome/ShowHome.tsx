@@ -11,16 +11,12 @@ interface IShowHomeProps {
 }
 export const ShowHome = ({ id, category }: IShowHomeProps) => {
 
-
-
     const [movies, setMovies] = useState<MovieData[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
-
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
     const [randomNumber] = useState<number>(Math.floor(Math.random() * 8) + 1);
     const [reqController, setReqController] = useState<boolean>(false);
-
     const movieWrapperRef = useRef<HTMLDivElement>(null);
 
     const fetchAndDisplayMovies = async (page: number = 1) => {
@@ -49,11 +45,6 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
         }
     };
 
-
-
-
-
-
     useEffect(() => {
         fetchAndDisplayMovies();
     }, []);
@@ -79,11 +70,10 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
         };
     }, [movieWrapperRef]);
 
-
     return (
         <ShowHomeWrapper ref={movieWrapperRef}
             style={{ backgroundImage: `url(${imageBackgroundList[randomNumber]?.currentSrc})` }}>
-            <div className="maincontent">
+            <div className="mainContent">
                 <div className="mainMovieWrapper" >
                     <h2>{category}</h2>
                     <p>{movies[randomNumber]?.title}</p>

@@ -3,8 +3,6 @@ import { TvWrapper } from "./styles";
 import { getTVShowCategories, Genre } from "../../services/getTVShowCategories";
 import { getTVShowsByCategory, TVShowData } from "../../services/getTVShowOfCategory";
 import Carousel from "../../components/Carousel/Carousel";
-import React from "react";
-
 
 const RenderCategoryCarousel = ({ idOfCategory }: { idOfCategory: number }) => {
     const [shows, setShows] = useState<TVShowData[]>([]);
@@ -26,8 +24,6 @@ const RenderCategoryCarousel = ({ idOfCategory }: { idOfCategory: number }) => {
     const handleLastItemReached = () => {
         setCurrentPage(prevPage => prevPage + 1);
     };
-
-    console.log('shows', shows);
 
     return (
         <Carousel
@@ -52,13 +48,11 @@ export const Tv = () => {
     return (
         <TvWrapper>
             <div className="maincontent">
-
                 {categories.map(({ id }) => (
                     <div className="caroselWrapper">
                         <RenderCategoryCarousel idOfCategory={id} />
                     </div>
                 ))}
-
             </div>
         </TvWrapper>
     );

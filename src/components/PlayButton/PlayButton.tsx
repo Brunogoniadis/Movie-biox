@@ -11,9 +11,7 @@ export const PlayButton = ({ id }: PlayButtonProps) => {
             <Link
                 key={id}
                 to={
-                    `/movie/${id}`}
-            >
-
+                    `/movie/${id}`}>
                 <i className="material-icons icon-small">play_arrow</i>
             </Link>
         </PlayButtonWrapper>

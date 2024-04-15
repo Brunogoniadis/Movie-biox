@@ -13,7 +13,6 @@ export const TvShowScreen = styled.div`
   position: relative;
   transition: ease 1s all;
 
-
   .mainTvShowWrapper {
     align-self: flex-start;
     top: 10%;
@@ -24,8 +23,8 @@ export const TvShowScreen = styled.div`
     align-items: start;
     gap: 5%;
     margin-top: 150px;
-
     margin-bottom: 150px;
+
     .ButtonsWrapper {
       display: flex;
       flex-direction: row;
@@ -34,13 +33,9 @@ export const TvShowScreen = styled.div`
       width: 100%;
       gap: 2%;
     }
-  
   }
-
-      .caroselWrapper{
-
-      width: 80%;
-
+  .caroselWrapper {
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,13 +45,11 @@ export const TvShowScreen = styled.div`
 
     margin: 0;
     margin-top: 5%;
+  }
 
-    }
-        
-    .caroselWrapper:hover  {
-      opacity: 1 !important;
-    }
-
+  .caroselWrapper:hover {
+    opacity: 1 !important;
+  }
 
   .bottomblur {
     width: 100%;
@@ -64,7 +57,11 @@ export const TvShowScreen = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   .leftblur {
@@ -73,7 +70,14 @@ export const TvShowScreen = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.2)
+    );
   }
 
   .overblur {
@@ -81,24 +85,25 @@ export const TvShowScreen = styled.div`
     height: 250px;
     position: absolute;
     bottom: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0)
+    );
   }
 
   .TvShowdetails {
-    
     border-radius: 8px;
-   
     height: 300px;
 
-
-                        @media (max-width: 500px) {
-    width: 60vw;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @media (max-width: 500px) {
+      width: 60vw;
+      height: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
     }
-
   }
 
   .tvTitle {

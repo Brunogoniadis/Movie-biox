@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 
 export const ShowHomeWrapper = styled.div`
@@ -7,19 +6,17 @@ export const ShowHomeWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 100% ;
-
-  background-position: center top; 
+  background-size: 100%;
+  background-position: center top;
   background-repeat: no-repeat;
   position: relative;
   transition: ease 1s all;
 
-          @media (max-width: 500px) {
-            height: 95vh;
+  @media (max-width: 500px) {
+    height: 95vh;
+  }
 
-    }
-
-  .maincontent{
+  .mainContent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,34 +25,26 @@ export const ShowHomeWrapper = styled.div`
     width: 100%;
     height: 100%;
 
-
-
-                    @media (max-width: 500px) {
-  margin-top: -15vh;
+    @media (max-width: 500px) {
+      margin-top: -15vh;
     }
-
-
-    .caroselWrapper{
+    .caroselWrapper {
       width: 100%;
       overflow: visible;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 500;
-
-    margin: 0;
-
-
-
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 500;
+      margin: 0;
     }
-        
-    .caroselWrapper:hover  {
+
+    .caroselWrapper:hover {
       opacity: 1 !important;
     }
 
-    .mainMovieWrapper{
+    .mainMovieWrapper {
       align-self: flex-start;
       top: 10%;
       left: 10%;
@@ -64,12 +53,12 @@ export const ShowHomeWrapper = styled.div`
       flex-direction: column;
       align-items: start;
       gap: 5%;
-                @media (max-width: 500px) {
-            top: -3vh;
-            height: 25vh;
-    }
+      @media (max-width: 500px) {
+        top: -3vh;
+        height: 25vh;
+      }
 
-      .ButtonsWrapper{
+      .ButtonsWrapper {
         display: flex;
         flex-direction: row;
         align-items: start;
@@ -77,53 +66,56 @@ export const ShowHomeWrapper = styled.div`
         width: 100%;
         gap: 2%;
       }
-
     }
-
   }
 
-  
   .bottomblur {
     width: 100%;
     height: 160px;
     position: absolute;
     top: -2px;
-    left: 0; 
-    background-image: linear-gradient(to bottom,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-        @media (max-width: 500px) {
-           
-              height: 60px;
-
+    left: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
+    @media (max-width: 500px) {
+      height: 60px;
     }
   }
-
 
   .leftblur {
     width: 45%;
     height: 100%;
     position: absolute;
     bottom: 0;
-    left: 0; 
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    left: 0;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
 
-            @media (max-width: 500px) {
-              display:none
+    @media (max-width: 500px) {
+      display: none;
     }
   }
 
-  .overblur{
+  .overblur {
     width: 100%;
     height: 650px;
     position: absolute;
     bottom: 0;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0)
+    );
 
-        @media (max-width: 500px) {
-              display:none
-
+    @media (max-width: 500px) {
+      display: none;
     }
-
   }
 `;
-
-

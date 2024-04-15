@@ -14,7 +14,6 @@ export const PlayButtonWrapper = styled.button`
     border: none;
     border-radius: 50%;
     font-size: 16px;
-
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
     transition: all 0.3s, box-shadow 0.3s;
 

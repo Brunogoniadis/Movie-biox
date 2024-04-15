@@ -16,20 +16,15 @@ const goldStarAnimation = keyframes`
 `;
 
 export const NoteWrapper = styled.div`
-
     width: 150px;
     height: 5px;
-
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: start;
     margin: 0px !important;
     padding: 0 !important;
-
     transition: all ease-in-out 1ms;
-
     img{
         width: auto;
         height: 5px;
@@ -38,9 +33,7 @@ export const NoteWrapper = styled.div`
         object-fit: contain;
         padding: 0;
         margin: 0px !important;
-        
     }
-
     .gold-star {
         font-size: ${props => props.starWidth};
         color: gold;
@@ -48,7 +41,6 @@ export const NoteWrapper = styled.div`
         font-weight: 200; 
         animation: ${goldStarAnimation} 1s ease-in-out forwards; 
     }
-
         .gold-star-no-anim {
         font-size: ${props => props.starWidth};
         color: gold;
