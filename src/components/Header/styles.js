@@ -103,11 +103,10 @@ export const HeaderWrapper = styled.header`
     align-items: center;
 
   .logo {
-    margin-right: 150px;
-    margin-top: 8px;
-    width: 130px;
-    height: 15px;
-    background-color: red;
+    margin-right: 160px;
+   
+    width: 90px;
+    height: 10px;
     object-fit: cover;
   }
 

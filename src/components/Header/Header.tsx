@@ -74,10 +74,10 @@ const Header = () => {
                 {isNavVisible && (
                     <nav onClick={toggleNav}>
                         <button onClick={handleExpandClick}>
-                            <Link to="/">Movies</Link>
+                            <Link onClick={handleLinkClick} to="/" style={{ color: isRetrospectiveRoute('/') ? 'rgb(14, 141, 150)' : 'white' }}>Movies</Link>
                         </button>
                         <button onClick={handleExpandClick}>
-                            <Link to="/tv">TV Shows</Link>
+                            <Link onClick={handleLinkClick} to="/tv" style={{ color: isRetrospectiveRoute('/tv') ? 'rgb(14, 141, 150)' : 'white' }}>TV Shows</Link>
                         </button>
                     </nav>
                 )}
