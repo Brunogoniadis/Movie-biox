@@ -15,6 +15,9 @@ export const HomeWrapper = styled.div`
   @media screen and (max-width: 500px) {
     margin-top: 15vh;
   }
+  .mainControler{
+    background-color: transparent;
+  }
   .maincontent{
     display: flex;
     flex-direction: column;

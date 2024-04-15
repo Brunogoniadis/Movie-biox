@@ -36,11 +36,10 @@ export const ShowHome = (props: IShowHomeProps) => {
             return img;
         });
         setImageBackgroundList((prevImages) => [...prevImages, ...imgElements]);
-        
     };
 
     const handleLastItemReached = () => {
-        console.log("passe")
+        
 
         setReqController(true)
 
@@ -76,6 +75,9 @@ export const ShowHome = (props: IShowHomeProps) => {
                 }
             }
         };
+
+        
+
 
         window.addEventListener("scroll", handleScroll);
         return () => {
