@@ -1,27 +1,24 @@
 import { useEffect, useState, useRef } from "react";
 import { MovieData } from "../../services/getMovieByPopularity";
 import { ShowHomeWrapper } from "./styles";
-import PlayButton from "../PlayButton/PlayButton";
-import InfoButton from "../InfoButton/InfoButton";
+import { PlayButton } from "../PlayButton/PlayButton";
 import Carousel from "../Carousel/Carousel";
 import { getMoviesCategory } from "../../services/getMoviesOfCategory";
 
 interface IShowHomeProps {
     id: number;
-    idPage: number,
-
+    category: string,
 }
+export const ShowHome = ({ id, category }: IShowHomeProps) => {
 
-export const ShowHome = (props: IShowHomeProps) => {
 
-    const { id } = props
 
     const [movies, setMovies] = useState<MovieData[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
-    const [randomNumber] = useState<number>(Math.floor(Math.random() * 4) + 1);
+    const [randomNumber] = useState<number>(Math.floor(Math.random() * 8) + 1);
     const [reqController, setReqController] = useState<boolean>(false);
 
     const movieWrapperRef = useRef<HTMLDivElement>(null);
@@ -39,7 +36,7 @@ export const ShowHome = (props: IShowHomeProps) => {
     };
 
     const handleLastItemReached = () => {
-        
+
 
         setReqController(true)
 
@@ -52,7 +49,7 @@ export const ShowHome = (props: IShowHomeProps) => {
         }
     };
 
-    
+
 
 
 
@@ -76,9 +73,6 @@ export const ShowHome = (props: IShowHomeProps) => {
             }
         };
 
-        
-
-
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener("scroll", handleScroll);
@@ -87,14 +81,16 @@ export const ShowHome = (props: IShowHomeProps) => {
 
 
     return (
-        <ShowHomeWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[randomNumber]?.currentSrc})` }}>
+        <ShowHomeWrapper ref={movieWrapperRef}
+            style={{ backgroundImage: `url(${imageBackgroundList[randomNumber]?.currentSrc})` }}>
             <div className="maincontent">
                 <div className="mainMovieWrapper" >
-                    <h2>{movies[randomNumber]?.original_title}</h2>
-                    <p>{movies[randomNumber]?.vote_average}</p>
+                    <h2>{category}</h2>
+                    <p>{movies[randomNumber]?.title}</p>
                     <div className="ButtonsWrapper">
-                        <PlayButton />
-                        <InfoButton />
+                        <PlayButton
+                            id={movies[randomNumber]?.id}
+                        />
                     </div>
                 </div>
                 <div className="caroselWrapper" style={{

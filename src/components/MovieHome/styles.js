@@ -91,7 +91,7 @@ export const ShowHomeWrapper = styled.div`
     left: 0; 
     background-image: linear-gradient(to bottom,  rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
         @media (max-width: 500px) {
-           top: 7vh;
+           
               height: 60px;
 
     }
@@ -107,7 +107,7 @@ export const ShowHomeWrapper = styled.div`
     background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 
             @media (max-width: 500px) {
-              width:15%;
+              display:none
     }
   }
 
@@ -119,8 +119,7 @@ export const ShowHomeWrapper = styled.div`
   background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 
 
         @media (max-width: 500px) {
-          bottom: 45vh;
-              height: 35vh;
+              display:none
 
     }
 

@@ -33,6 +33,7 @@ const Carousel = (props: CarouselProps) => {
   const { data: movies, typeOfStyle, typeOfMedia, onLastItemReached } = props;
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   const [isLoad, setIsLoad] = useState<string>('0px');
+  const [visibleArrow, setVisibleArrow] = useState<boolean>(true);
 
   let height = '310px';
   let width = 'auto';
@@ -54,7 +55,7 @@ const Carousel = (props: CarouselProps) => {
 
   const settings = {
     dots: false,
-    arrows: true,
+    arrows: visibleArrow,
     infinite: false,
     speed: 320,
     slidesToShow: caroselItems,
@@ -75,17 +76,18 @@ const Carousel = (props: CarouselProps) => {
       setCurrentSlide(index + caroselItems);
     },
   };
-  console.log('current', currentSlide, movies.length)
 
   useEffect(() => {
     if (currentSlide === movies.length && onLastItemReached && movies.length > 0) {
       setIsLoad("8px")
+      setVisibleArrow(false)
       const timeoutId = setTimeout(() => {
         onLastItemReached();
       }, 1000);
       return () => clearTimeout(timeoutId);
     }
     setIsLoad("0px")
+    setVisibleArrow(true)
 
   }, [currentSlide, movies.length, onLastItemReached]);
 
@@ -99,6 +101,7 @@ const Carousel = (props: CarouselProps) => {
       width={width}
       arrowContainerHeight={arrowContainerHeight}
       blurFilter={isLoad}
+      displayArrow={visibleArrow}
     >
 
       {movies.map((movie, index) => (

@@ -12,11 +12,14 @@ export const HomeWrapper = styled.div`
   position: relative;
 
   transition: ease 1s all;
-  @media screen and (max-width: 500px) {
-    margin-top: 15vh;
-  }
-  .mainControler{
+
+  .mainController{
     background-color: transparent;
+
+
+      @media screen and (max-width: 500px) {
+    padding-top: 15vh;
+  }
   }
   .maincontent{
     display: flex;
@@ -27,9 +30,7 @@ export const HomeWrapper = styled.div`
     width: 100%;
     height: 100%;
 
-    
-
-
+  
 
     .caroselWrapper{
       width: 100%;
