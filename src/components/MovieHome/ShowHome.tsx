@@ -8,6 +8,8 @@ import { getMoviesCategory } from "../../services/getMoviesOfCategory";
 
 interface IShowHomeProps {
     id: number;
+    idPage: number,
+
 }
 
 export const ShowHome = (props: IShowHomeProps) => {
@@ -15,25 +17,48 @@ export const ShowHome = (props: IShowHomeProps) => {
     const { id } = props
 
     const [movies, setMovies] = useState<MovieData[]>([]);
-    const [movieSuggested, setMovieSuggested] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+
     const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
+    const [randomNumber] = useState<number>(Math.floor(Math.random() * 4) + 1);
+    const [reqController, setReqController] = useState<boolean>(false);
 
     const movieWrapperRef = useRef<HTMLDivElement>(null);
 
+    const fetchAndDisplayMovies = async (page: number = 1) => {
+        const movies = await getMoviesCategory(id, page);
+        setMovies((prevMovies) => [...prevMovies, ...movies]);
+
+        const imgElements = movies.map((movie) => {
+            const img = new Image();
+            img.src = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+            return img;
+        });
+        setImageBackgroundList((prevImages) => [...prevImages, ...imgElements]);
+        
+    };
+
+    const handleLastItemReached = () => {
+        console.log("passe")
+
+        setReqController(true)
+
+        if (reqController) {
+            const nextPage = currentPage + 1;
+            fetchAndDisplayMovies(nextPage);
+            setCurrentPage(nextPage);
+            setReqController(false)
+
+        }
+    };
+
+    
+
+
+
 
     useEffect(() => {
-        const fetchAndDisplayMovies = async () => {
-            const movies = await getMoviesCategory(id);
-            setMovies(movies);
-
-            const imgElements = movies.map((movie) => {
-                const img = new Image();
-                img.src = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
-                return img;
-            });
-            setImageBackgroundList(imgElements);
-        };
         fetchAndDisplayMovies();
     }, []);
 
@@ -58,30 +83,26 @@ export const ShowHome = (props: IShowHomeProps) => {
         };
     }, [movieWrapperRef]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const randomValue = Math.floor(Math.random() * 11);
-            setMovieSuggested(randomValue);
-        }, 7000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     return (
-        <ShowHomeWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[movieSuggested]?.currentSrc})` }}>
+        <ShowHomeWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[randomNumber]?.currentSrc})` }}>
             <div className="maincontent">
                 <div className="mainMovieWrapper" >
-                    <h2>{movies[0]?.original_title}</h2>
-                    <p>{movies[0]?.vote_average}</p>
+                    <h2>{movies[randomNumber]?.original_title}</h2>
+                    <p>{movies[randomNumber]?.vote_average}</p>
                     <div className="ButtonsWrapper">
                         <PlayButton />
                         <InfoButton />
                     </div>
                 </div>
-                <div className="caroselWrapper" style={{ opacity: carouselOpacity, 
-                    transition: "all 1.5s ease" }}>
-                    <Carousel data={movies}
-                    typeOfMedia="movie"
+                <div className="caroselWrapper" style={{
+                    opacity: carouselOpacity,
+                    transition: "all 1.5s ease"
+                }}>
+                    <Carousel
+                        data={movies}
+                        typeOfMedia="movie"
+                        onLastItemReached={handleLastItemReached}
                     />
                 </div>
                 <div className="bottomblur" />

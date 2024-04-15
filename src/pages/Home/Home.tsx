@@ -8,41 +8,27 @@ import { ShowHome } from '../../components/MovieHome/ShowHome'
 
 
 export const Home = () => {
-
-
-
     const [category, setCategory] = useState<Genre[]>([]);
 
+    const fetchCategory = async () => {
+        const categories = await getCategories();
+        setCategory(categories);
+    };
+
     useEffect(() => {
-        const fetchCategory = async () => {
-
-            const categories = await getCategories();
-            setCategory(categories);
-
-        };
         fetchCategory();
-
-
-
-
     }, []);
 
-
     console.log('movieCategory', category)
-
-
-
     return (
         <>
 
             <HomeWrapper >
-                {category.map((category) => (
-                    <ShowHome id={category.id} />
-                ))}
+
+                <ShowHome id={28}
+                />
 
             </HomeWrapper>
-
-
         </>
     );
 };

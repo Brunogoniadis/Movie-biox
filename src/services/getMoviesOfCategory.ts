@@ -18,17 +18,18 @@ export interface MovieData {
 }
 
 export const getMoviesCategory = async (
-  categoryId: number
+  categoryId: number,
+  page: number = 1 
 ): Promise<MovieData[]> => {
-  const apiKey = import.meta.env.VITE_API_KEY
+  const apiKey = import.meta.env.VITE_API_KEY;
 
-  const apiUrl: string = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${categoryId}`
+  const apiUrl: string = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${categoryId}&page=${page}`;
 
   try {
-    const response = await axios.get(apiUrl)
-    return response.data.results
+    const response = await axios.get(apiUrl);
+    return response.data.results;
   } catch (error) {
-    console.error('Error:', error)
-    return []
+    console.error("Error:", error);
+    return [];
   }
-}
+};
