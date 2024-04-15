@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { MovieData } from "../../services/getMovieByPopularity";
 import { ShowHomeWrapper } from "./styles";
 import PlayButton from "../PlayButton/PlayButton";
@@ -71,8 +71,8 @@ export const ShowHome = (props: IShowHomeProps) => {
         <ShowHomeWrapper ref={movieWrapperRef} style={{ backgroundImage: `url(${imageBackgroundList[movieSuggested]?.currentSrc})` }}>
             <div className="maincontent">
                 <div className="mainMovieWrapper" >
-                    <h2>{movies[movieSuggested]?.original_title}</h2>
-                    <p>{movies[movieSuggested]?.vote_average}</p>
+                    <h2>{movies[0]?.original_title}</h2>
+                    <p>{movies[0]?.vote_average}</p>
                     <div className="ButtonsWrapper">
                         <PlayButton />
                         <InfoButton />

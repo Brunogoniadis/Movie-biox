@@ -12,7 +12,9 @@ export const HomeWrapper = styled.div`
   position: relative;
 
   transition: ease 1s all;
-
+  @media screen and (max-width: 500px) {
+    margin-top: 15vh;
+  }
   .maincontent{
     display: flex;
     flex-direction: column;
@@ -74,6 +76,10 @@ export const HomeWrapper = styled.div`
     top: 0;
     left: 0; 
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+      @media screen and (max-width: 500px) {
+           margin-top:6vh;
+      }
   }
 
 
@@ -84,6 +90,11 @@ export const HomeWrapper = styled.div`
     bottom: 0;
     left: 0; 
     background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+    
+          @media screen and (max-width: 500px) {
+            display: none;
+          }
   }
 
   .overblur{
@@ -93,6 +104,9 @@ export const HomeWrapper = styled.div`
     bottom: 0;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 
+          @media screen and (max-width: 500px) {
+            display: none;
+          }
   }
 `;
 
