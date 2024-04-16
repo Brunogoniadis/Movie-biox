@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 export interface TVShowData {
   backdrop_path: string | null;
@@ -61,13 +61,13 @@ export const getTVShowById = async (
 ): Promise<TVShowData | null> => {
   const apiKey = import.meta.env.VITE_API_KEY;
 
-  const apiUrl = `https://api.themoviedb.org/3/tv/${tvShowId}?api_key=${apiKey}`;
+  const apiUrl = `https://node-ts-moviebiox.vercel.app/api/tv/${tvShowId}`;
 
   try {
     const response = await axios.get(apiUrl);
     return response.data;
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
     return null;
   }
 };
