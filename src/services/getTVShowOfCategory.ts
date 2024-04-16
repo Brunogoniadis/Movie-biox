@@ -11,6 +11,7 @@ export const getTVShowsByCategory = async (
 
   try {
     const response = await axios.get(apiUrl);
+
     return response.data.results;
   } catch (error) {
     console.error('Error:', error);

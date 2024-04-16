@@ -4,15 +4,14 @@ import { IMovie } from './types/IMovie';
 
 export const getMoviesCategory = async (
   categoryId: number,
-  page: number = 1
+  page: number
 ): Promise<IMovie[]> => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-
-  const apiUrl: string = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${categoryId}&page=${page}`;
+  const apiUrl: string = `//node-ts-moviebiox.vercel.app/api/movies/category/${categoryId}?page=${page}`;
 
   try {
     const response = await axios.get(apiUrl);
-    return response.data.results;
+    
+    return response.data;
   } catch (error) {
     console.error('Error:', error);
     return [];

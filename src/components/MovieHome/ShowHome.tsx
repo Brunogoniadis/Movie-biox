@@ -21,7 +21,10 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
 
     const fetchAndDisplayMovies = async (page: number = 1) => {
         const movies = await getMoviesCategory(id, page);
+
         setMovies((prevMovies) => [...prevMovies, ...movies]);
+
+
 
         const imgElements = movies.map((movie) => {
             const img = new Image();
@@ -30,6 +33,8 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
         });
         setImageBackgroundList((prevImages) => [...prevImages, ...imgElements]);
     };
+
+
 
     const handleLastItemReached = () => {
 
