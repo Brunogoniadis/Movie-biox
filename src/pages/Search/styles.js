@@ -20,9 +20,6 @@ export const SearchWrapper = styled.section`
     text-align: start;
   }
 
-  h3::first-letter {
-    visibility: hidden;
-  }
   .mainGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

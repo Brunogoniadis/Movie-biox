@@ -59,7 +59,6 @@ export interface TVShowData {
 export const getTVShowById = async (
   tvShowId: string | undefined
 ): Promise<TVShowData | null> => {
-  const apiKey = import.meta.env.VITE_API_KEY;
 
   const apiUrl = `https://node-ts-moviebiox.vercel.app/api/tv/${tvShowId}`;
 

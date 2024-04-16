@@ -5,7 +5,6 @@ export const getTVShowsByCategory = async (
   genreId: number,
   page: number = 1
 ): Promise<ITvShow[]> => {
-  const apiKey = import.meta.env.VITE_API_KEY;
 
   const apiUrl: string = `https://node-ts-moviebiox.vercel.app/api/tv/category/${genreId}?page=${page}`;
 

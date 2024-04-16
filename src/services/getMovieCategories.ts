@@ -6,11 +6,7 @@ export interface Genre {
 }
 
 export const getCategories = async (): Promise<Genre[]> => {
-  const apiKey = import.meta.env.VITE_API_KEY;
 
-  if (!apiKey) {
-    throw new Error("API key not found.");
-  }
 
   const apiUrl: string = `https://node-ts-moviebiox.vercel.app/api/moviesgenres`;
                           

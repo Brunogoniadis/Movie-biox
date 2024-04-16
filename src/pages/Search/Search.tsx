@@ -18,7 +18,6 @@ export const Search = () => {
   const [tvShows, setTvShows] = useState<TVShowData[]>([]);
 
 
-  console.log('queryTermFont', query)
 
   useEffect(() => {
     const fetchAndDisplayMovies = async () => {
@@ -36,7 +35,7 @@ export const Search = () => {
 
   return (
     <SearchWrapper>
-      <h3> Resultados para "{query}" em filmes</h3>
+      <h3> Results for "{query}" in movies</h3>
       <div className="mainGrid">
         {movies.map((movie, index) => (
           <MovieSearch
@@ -53,7 +52,7 @@ export const Search = () => {
 
       <h3 style={{
         marginTop: '5%'
-      }}> Resultados para "{query}" na Séries</h3>
+      }}> Results for "{query}" in Séries</h3>
       <div className="mainGrid">
         {tvShows.map((movie, index) => (
           <MovieSearch

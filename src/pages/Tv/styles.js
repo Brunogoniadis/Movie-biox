@@ -20,6 +20,7 @@ export const TvWrapper = styled.section`
     position: relative;
     width: 100%;
     height: 100%;
+  transition: ease 1s all;
 
     .caroselWrapper {
       width: 100%;
@@ -32,6 +33,7 @@ export const TvWrapper = styled.section`
       z-index: 500;
 
       margin: 0;
+  transition: ease 1s all;
 
       h3 {
         width: 100%;

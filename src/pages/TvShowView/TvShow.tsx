@@ -31,7 +31,6 @@ export const TvShow = () => {
     fetchRelacionedTvShows();
   }, [id]);
 
-  console.log('tvShowsRelacioned', tvShowsRelacioned);
 
   return (
     <TvShowScreen
