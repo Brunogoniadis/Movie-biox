@@ -129,7 +129,6 @@ export const MovieScreen = styled.section`
   }
 
   .moviedetail {
-    font-size: 16px;
     margin-bottom: 25px;
     @media (max-width: 500px) {
       margin-bottom: 75px;

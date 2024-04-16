@@ -118,7 +118,7 @@ const Carousel = (props: CarouselProps) => {
             <img
               referrerPolicy="no-referrer"
               className="image"
-              src={`https://image.tmdb.org/t/p/w500${movie[backgroundCard as keyof Data]}`}
+              src={`https://image.tmdb.org/t/p/w200${movie[backgroundCard as keyof Data]}`}
               alt={movie.title}
             />
             <div className="textContainer">

@@ -51,6 +51,17 @@ export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6, strong{
     font-weight: 500;
   }
+  h2{
+    size: 26px;
+  }
+  p{
+    font-size: 18px;
+  }
+      @media (max-width: 500px) {
+    p{
+      font-size: 16px;
+    }
+    }
 a{
   text-decoration: none;
   color: white;

@@ -16,20 +16,26 @@ export const HeaderWrapper = styled.header`
 
     .logo {
       
-    width: 130px;
-    height: 16px;
-    object-fit: cover;
-    overflow: visible;
-    margin-left: 3%;
-  }
+      width: 130px;
+      height: 16px;
+      object-fit: cover;
+      overflow: visible;
+      margin-left: 3%;
+    }
 
   .logo img {
     width: 100%;
     height: 100%; 
     object-fit: cover;
     overflow: visible;
+    transition: transform 0.1s ease;
+    :hover{
+      transform: scale(1.2);
+    }
   }
-
+.logo img:hover {
+  transform: scale(1.1);
+}
   .formContainer {
     width: 250px;
     display: flex;
@@ -82,6 +88,7 @@ export const HeaderWrapper = styled.header`
       border: none;
       margin-bottom: 12px;
       z-index: 499;
+
     }
     link {
       color: #fff;
@@ -89,8 +96,10 @@ export const HeaderWrapper = styled.header`
       margin-left: 3rem;
       font-weight: bold;
       transition: color 0.3s ease;
-      font-size: 16px;
       z-index: 500;
+      a{
+        font-weight: bold;
+      }
       &:hover {
         color: #f65261;
       }

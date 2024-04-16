@@ -21,6 +21,11 @@ export const Movie = () => {
   const [moviesrelacioned, setMoviesrelacioned] = useState<IMovie[]>([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+
+  useEffect(() => {
     const fetchCategoryMovies = async () => {
       const movieService = await getMovieById(id);
       setMovie(movieService);
@@ -36,8 +41,9 @@ export const Movie = () => {
 
   return <MovieScreen
     style={{
-      backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
+      backgroundImage: `url(${`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}), url(${`https://image.tmdb.org/t/p/w500${movie?.backdrop_path}`})`
     }}
+
   >
     <div className="mainMovieWrapper">
       <div className="moviedetails">

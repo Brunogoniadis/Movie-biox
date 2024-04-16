@@ -25,13 +25,6 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
         setMovies((prevMovies) => [...prevMovies, ...movies]);
 
 
-
-        const imgElements = movies.map((movie) => {
-            const img = new Image();
-            img.src = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
-            return img;
-        });
-        setImageBackgroundList((prevImages) => [...prevImages, ...imgElements]);
     };
 
 
@@ -75,9 +68,14 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
         };
     }, [movieWrapperRef]);
 
+
     return (
-        <ShowHomeWrapper ref={movieWrapperRef}
-            style={{ backgroundImage: `url(${imageBackgroundList[randomNumber]?.currentSrc})` }}>
+        <ShowHomeWrapper
+            ref={movieWrapperRef}
+            style={{
+                backgroundImage: `url(${`https://image.tmdb.org/t/p/original${movies[randomNumber]?.backdrop_path}`}), url(${`https://image.tmdb.org/t/p/w500${movies[randomNumber]?.backdrop_path}`})`
+            }}
+        >
             <div className="mainContent">
                 <div className="mainMovieWrapper" >
                     <h2>{category}</h2>

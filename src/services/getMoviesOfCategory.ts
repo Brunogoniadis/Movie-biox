@@ -10,7 +10,8 @@ export const getMoviesCategory = async (
 
   try {
     const response = await axios.get(apiUrl);
-
+    console.log('response', apiUrl);
+    
     return response.data;
   } catch (error) {
     console.error('Error:', error);

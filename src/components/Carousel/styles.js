@@ -159,7 +159,9 @@ export const Item = styled.div`
   width: 80%;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  font-size: 16px;
+
 }
 
 .pSub {

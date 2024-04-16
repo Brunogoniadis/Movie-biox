@@ -119,8 +119,8 @@ const Header = () => {
             </div>
 
             <nav>
-                <Link onClick={handleLinkClick} to="/" style={{ color: isRetrospectiveRoute('/') ? 'rgb(14, 141, 150)' : 'inherit' }}>Movies</Link>
-                <Link onClick={handleLinkClick} to="/tv" style={{ color: isRetrospectiveRoute('/tv') ? 'rgb(14, 141, 150)' : 'inherit' }}>TV Shows</Link>
+                <Link onClick={handleLinkClick} to="/" style={{ fontWeight: 'bold', fontSize: '20px', color: isRetrospectiveRoute('/') ? 'rgb(14, 141, 150)' : 'inherit' }}>Movies</Link>
+                <Link onClick={handleLinkClick} to="/tv" style={{ fontWeight: 'bold', fontSize: '20px', color: isRetrospectiveRoute('/tv') ? 'rgb(14, 141, 150)' : 'inherit' }}>TV Shows</Link>
             </nav>
             <div className="formContainer">
                 <form onSubmit={handleSubmitSearch}>

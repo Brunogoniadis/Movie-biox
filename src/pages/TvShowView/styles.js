@@ -126,9 +126,10 @@ export const TvShowScreen = styled.section`
 
   .tvDetail {
     width: 900px;
-    font-size: 16px;
     margin-bottom: 25px;
      @media (max-width: 500px) {
+      
+
       width: 60vw;
       max-height: calc(1.5em * 5); 
       line-height: 1.5em; 

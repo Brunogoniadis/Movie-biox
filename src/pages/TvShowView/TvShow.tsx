@@ -18,6 +18,11 @@ export const TvShow = () => {
   const [tvShowsRelacioned, setTvShowsRelacioned] = useState<ITvShow[]>([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0); 
+  });
+
+
+  useEffect(() => {
     const fetchTvShow = async () => {
       const tvShowData = await getTVShowById(id);
       setTvShow(tvShowData);
@@ -35,7 +40,8 @@ export const TvShow = () => {
   return (
     <TvShowScreen
       style={{
-        backgroundImage: `url(https://image.tmdb.org/t/p/original${tvShow?.backdrop_path})`
+        backgroundImage: `url(${`https://image.tmdb.org/t/p/original${tvShow?.backdrop_path}`}), url(${`https://image.tmdb.org/t/p/w500${tvShow?.backdrop_path}`})`
+
       }}
     >
       <div className="mainTvShowWrapper">
