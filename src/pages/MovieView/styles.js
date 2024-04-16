@@ -14,6 +14,9 @@ export const MovieScreen = styled.section`
   position: relative;
   transition: ease 2s background;
 
+    @media (max-width: 500px) {
+      background-size: 80vh;
+    }
   .mainMovieWrapper {
     align-self: flex-start;
     top: 10%;
@@ -63,6 +66,9 @@ export const MovieScreen = styled.section`
       rgba(0, 0, 0, 1),
       rgba(0, 0, 0, 0)
     );
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   .leftblur {
@@ -79,6 +85,9 @@ export const MovieScreen = styled.section`
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.2)
     );
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   .overblur {
@@ -92,6 +101,9 @@ export const MovieScreen = styled.section`
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0)
     );
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 
   .moviedetails {

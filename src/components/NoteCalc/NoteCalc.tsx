@@ -16,6 +16,8 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
     }
 
     const [stars, setStars] = useState<JSX.Element[]>([]);
+    const [visibleStars, setVisibleStars] = useState<number>(0);
+
 
     useEffect(() => {
         if (typeof noteAverage === 'number') {
@@ -26,6 +28,16 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
             }
         }
     }, [noteAverage, typeOfStyle]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            if (visibleStars < stars.length) {
+                setVisibleStars(prevStars => prevStars + 1);
+            }
+        }, 100);
+
+        return () => clearTimeout(timeout);
+    }, [visibleStars, stars]);
 
     const calculateStarsWithAnimation = (average: number) => {
         const ratingInt = Math.floor(average);
@@ -43,23 +55,28 @@ export const NoteCalc = ({ noteAverage, typeOfStyle }: IStarsCalcProps) => {
         }
         setStars(starsArray);
     };
+
     const calculateStarsWithoutAnimation = (average: number) => {
         const starsArray: JSX.Element[] = [];
-        const ratingInt = Math.round(average);
+        const ratingInt = Math.floor(average);
 
         for (let i = 0; i < ratingInt; i++) {
             starsArray.push(<i key={i} className={`material-icons icon-small ${starClass}`}>star</i>);
         }
-        if (average - ratingInt >= 0.25 && average - ratingInt < 0.75) {
+
+        const decimalPart = average - ratingInt;
+        if (decimalPart >= 0.25 && decimalPart < 0.75) {
             starsArray.push(<i key="half" className={`material-icons icon-small ${starClass}`}>star_half</i>);
-        } else if (average - ratingInt >= 0.75) {
+        } else if (decimalPart >= 0.75 || decimalPart >= 0.5) {
             starsArray.push(<i key="full" className={`material-icons icon-small ${starClass}`}>star</i>);
         }
+
         setStars(starsArray);
     };
+
     return (
         <NoteWrapper starWidth={starWidth}>
-            {stars}
+            {typeOfStyle === "min" ? stars : stars.slice(0, visibleStars)}
         </NoteWrapper>
     );
 };

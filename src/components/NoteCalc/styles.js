@@ -25,6 +25,8 @@ export const NoteWrapper = styled.div`
     margin: 0px !important;
     padding: 0 !important;
     transition: all ease-in-out 1ms;
+    
+
     img{
         width: auto;
         height: 5px;
@@ -37,14 +39,22 @@ export const NoteWrapper = styled.div`
     .gold-star {
         font-size: ${props => props.starWidth};
         color: gold;
-        width: 70px;
+        width: auto;
         font-weight: 200; 
         animation: ${goldStarAnimation} 1s ease-in-out forwards; 
     }
         .gold-star-no-anim {
         font-size: ${props => props.starWidth};
+                animation: none; 
         color: gold;
         width: 70px;
         font-weight: 200; 
+
+        
     }
+
+    .gold-star-no-anim:hover {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
 `

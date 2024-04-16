@@ -27,6 +27,7 @@ export const HeaderWrapper = styled.header`
     width: 100%;
     height: 100%; 
     object-fit: cover;
+    overflow: visible;
   }
 
   .formContainer {
@@ -114,6 +115,7 @@ export const HeaderWrapper = styled.header`
     width: 100%;
     height: 100%; 
     object-fit: cover;
+    overflow: visible;
   }
     .formContainer {
       position: absolute;

@@ -13,6 +13,10 @@ export const TvShowScreen = styled.section`
   position: relative;
   transition: ease 1s all;
 
+  @media (max-width: 500px) {
+    background-size: 80vh;
+  }
+
   .mainTvShowWrapper {
     align-self: flex-start;
     top: 10%;
@@ -86,13 +90,18 @@ export const TvShowScreen = styled.section`
     width: 100%;
     height: 250px;
     position: absolute;
-    bottom: 0;
+    bottom: 25vh;
     background-image: linear-gradient(
       to top,
       rgba(0, 0, 0, 1),
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0)
     );
+    
+    @media (max-width: 500px) {
+      display: none;
+    }
+      
   }
 
   .TvShowdetails {

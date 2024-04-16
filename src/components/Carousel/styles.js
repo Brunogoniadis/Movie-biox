@@ -119,7 +119,7 @@ export const CustomSlider = styled(Slider)`
 
     }
 
-
+    
     div{
         display: flex;
         align-items: center;
@@ -128,9 +128,7 @@ export const CustomSlider = styled(Slider)`
         
           margin-top: 2px;
           transition: ease-in 0.5ms all;
-        :hover{
-          margin-top: -2px;
-}
+
         
     }
   }
@@ -159,9 +157,11 @@ export const Item = styled.div`
 .pTitle {
   margin-bottom: 5px;
   width: 80%;
-  height: 10%;
-
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
 }
+
 .pSub {
   margin-top: 5px;
   width: 80%;
