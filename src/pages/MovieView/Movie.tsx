@@ -42,7 +42,7 @@ export const Movie = () => {
     <div className="mainMovieWrapper">
       <div className="moviedetails">
         <h2 className="movietitle">{movie?.title}</h2>
-        <p className="moviedetail" style={{ height: '90px' }}
+        <p className="moviedetail" style={{ height: '120px' }}
         >{movie?.overview}</p>
         <p className="moviedetail">Release Date: {movie?.release_date}</p>
         <p className="moviedetail">Runtime: {movie?.runtime} minutes</p>
