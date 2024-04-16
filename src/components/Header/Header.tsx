@@ -111,9 +111,13 @@ const Header = () => {
     }
     return (
         <HeaderWrapper>
+
             <div className="logo">
-                <img src={LogoFont} alt="" />
+                <Link to="/">
+                    <img src={LogoFont} alt="" />
+                </Link>
             </div>
+
             <nav>
                 <Link onClick={handleLinkClick} to="/" style={{ color: isRetrospectiveRoute('/') ? 'rgb(14, 141, 150)' : 'inherit' }}>Movies</Link>
                 <Link onClick={handleLinkClick} to="/tv" style={{ color: isRetrospectiveRoute('/tv') ? 'rgb(14, 141, 150)' : 'inherit' }}>TV Shows</Link>

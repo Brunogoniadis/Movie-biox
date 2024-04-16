@@ -17,6 +17,8 @@ export const TvShowScreen = styled.section`
     align-self: flex-start;
     top: 10%;
     left: 10%;
+    
+    
     z-index: 500;
     display: flex;
     flex-direction: column;
@@ -96,6 +98,7 @@ export const TvShowScreen = styled.section`
   .TvShowdetails {
     border-radius: 8px;
     height: 300px;
+    width: 600px;
 
     @media (max-width: 500px) {
       width: 60vw;
@@ -113,7 +116,17 @@ export const TvShowScreen = styled.section`
   }
 
   .tvDetail {
+    width: 900px;
     font-size: 16px;
     margin-bottom: 25px;
+     @media (max-width: 500px) {
+      width: 60vw;
+      max-height: calc(1.5em * 5); 
+      line-height: 1.5em; 
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: horizontal;
+    }
   }
 `;
