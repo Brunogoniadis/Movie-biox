@@ -2,10 +2,8 @@ import axios from 'axios';
 import { ITvShow } from './types/ITvShow';
 
 export const getTVShowRelacioned = async (
-  tvShowId: string | undefined,
-  page: number = 1
+  tvShowId: string | undefined
 ): Promise<ITvShow[]> => {
-
   const apiUrl: string = `https://node-ts-moviebiox.vercel.app/api/tv/related/${tvShowId}}`;
 
   try {
