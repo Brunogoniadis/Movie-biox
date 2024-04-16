@@ -13,7 +13,6 @@ export const ShowHome = ({ id, category }: IShowHomeProps) => {
 
     const [movies, setMovies] = useState<IMovie[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [imageBackgroundList, setImageBackgroundList] = useState<HTMLImageElement[]>([]);
     const [carouselOpacity, setCarouselOpacity] = useState<number>(1);
     const [randomNumber] = useState<number>(Math.floor(Math.random() * 8) + 1);
     const [reqController, setReqController] = useState<boolean>(false);
