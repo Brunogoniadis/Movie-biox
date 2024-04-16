@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+![Logo](https://raw.githubusercontent.com/Brunogoniadis/Movie-biox-React-ts/ffa100b9ca4d5ee321909cc1e8f57ccec77ab7c7/src/assets/Logo.svg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Moviebiox
 
-Currently, two official plugins are available:
+Moviebiox é uma aplicação web que permite aos usuários pesquisarem e navegarem por filmes e programas de TV utilizando a API do Themoviedb. Neste repositório frontend, que faz parte de uma aplicação full-stack, os usuários podem pesquisar por título, gênero ou palavra-chave. Os resultados da pesquisa são exibidos em uma grade com pôsteres, títulos e avaliações.
+ 
+O aplicativo está implantado em 
+- [Movie-biox](https://movie-biox.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias utilizadas
+<div style="display: inline_block">
+  <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
+  <img align="center" alt="TypeScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
+  <img align="center" alt="Styled Components" height="30" width="40" src="https://raw.githubusercontent.com/styled-components/brand/master/styled-components.svg">
+  <img align="center" alt="Axios" height="30" width="40" src="https://axios-http.com/assets/logo.svg">
+  <img align="center" alt="Vite" height="30" width="40" src="https://vitejs.dev/logo.svg">
+  <img align="center" alt="React Router" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/reactrouter/reactrouter-original.svg">
+  <img align="center" alt="React Slick" height="30" width="40" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpA7T7iAvJEwFPzoBjtj2pmSrrnm3LQZbUQEGDd5Iccg35nltxxPMFQ-humdRqlCbc8rU&usqp=CAU">
+</div>
 
-## Expanding the ESLint configuration
+## Funcionalidades principais
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+* Carrossel e páginas configuradas para trabalharem paginando as requisições através de callbacks.
+* Pesquisa de filmes e programas de TV por título, gênero ou palavra-chave.
+* Exibição de resultados de pesquisa em uma grade com pôsteres, títulos e avaliações.
+* Exibição de informações detalhadas sobre filmes e programas de TV.
+* Navegação por categorias de filmes e programas de TV.
+* Para cada filme ou série de TV, o aplicativo exibe títulos relacionados que os usuários podem gostar.
+* O aplicativo é totalmente responsivo, adaptando-se perfeitamente a dispositivos móveis e desktops.
+* Consumo da API NodeTypescript no repositório:
+https://github.com/Brunogoniadis/node-ts-moviebiox
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+
+## Screenshots
+
+![Texto alternativo](https://i.imgur.com/FD0rc1c.png)
+
+
+## Autores
+
+- [@brunogoniadis](https://www.github.com/Brunogoniadis)
+
+
+## Instalação
+
+Para instalar e testar localmente 
+
+```bash
+  git clone https://github.com/Brunogoniadis/Movie-biox-React-ts
+  cd Movie-biox-React-ts
+  yarn install || npm instalar
+  yarn dev || npm dev
 ```
+    
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
