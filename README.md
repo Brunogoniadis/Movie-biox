@@ -34,7 +34,7 @@ https://github.com/Brunogoniadis/node-ts-moviebiox
 
 ## Screenshots
 
-![Texto alternativo](https://i.imgur.com/FD0rc1c.png)
+![Texto alternativo](https://i.imgur.com/1ugiK3H.jpeg)
 
 
 ## Autores
