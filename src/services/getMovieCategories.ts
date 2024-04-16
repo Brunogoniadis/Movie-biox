@@ -12,11 +12,11 @@ export const getCategories = async (): Promise<Genre[]> => {
     throw new Error("API key not found.");
   }
 
-  const apiUrl: string = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}`;
-
+  const apiUrl: string = `https://node-ts-moviebiox.vercel.app/api/moviesgenres`;
+                          
   try {
     const response = await axios.get(apiUrl);
-    return response.data.genres;
+    return response.data;
   } catch (error) {
     console.error("Error:", error);
     return [];
